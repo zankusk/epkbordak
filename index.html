@@ -3,13 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <title>BØRDAK — EPK</title>
+<meta name="description" content="BØRDAK — hypnotic, percussive techno from Tarraco / Barcelona. Official EPK: sets, technical rider and booking.">
+<link rel="canonical" href="https://epkbordak.netlify.app/">
+<link rel="preload" as="image" href="assets/bordak-hero-poster.webp" fetchpriority="high">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BØRDAK">
+<meta property="og:title" content="BØRDAK — EPK">
+<meta property="og:description" content="Hypnotic, percussive techno. Tarraco / Barcelona. Official EPK.">
+<meta property="og:url" content="https://epkbordak.netlify.app/">
+<meta property="og:image" content="https://epkbordak.netlify.app/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BØRDAK — EPK">
+<meta name="twitter:description" content="Hypnotic, percussive techno. Tarraco / Barcelona. Official EPK.">
+<meta name="twitter:image" content="https://epkbordak.netlify.app/assets/og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"BØRDAK","genre":["Techno","Hypnotic techno"],"url":"https://epkbordak.netlify.app/","image":"https://epkbordak.netlify.app/assets/og.jpg","sameAs":["https://linktr.ee/bordakdj","https://instagram.com/bordak.ov","https://soundcloud.com/bordakdj","https://www.mixcloud.com/bordakdj/"]}</script>
 <meta name="theme-color" content="#0a0806">
-<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high" media="(prefers-reduced-motion: no-preference)">
 <script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Cormorant+Garamond:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,340;9..144,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Fraunces:opsz,wght@9..144,400&display=swap" rel="stylesheet">
 <style>
   :root{
     /* BLACK & MERLOT */
@@ -27,8 +44,8 @@
     --ease:cubic-bezier(.16,1,.3,1);
     /* efectos de texto (más suaves en móvil, ver media query abajo) */
     --mblur:12px;
-    --mglow:30px;
-    --mglowA:.35;
+    --mglow:20px;
+    --mglowA:.16;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);}
@@ -111,7 +128,7 @@
   }
   @keyframes ignite{
     0%{ opacity:0; filter:blur(6px); text-shadow:0 0 0 rgba(205,150,80,0); }
-    55%{ opacity:1; filter:blur(0); text-shadow:0 0 18px rgba(205,150,80,0.6); }
+    55%{ opacity:1; filter:blur(0); text-shadow:0 0 14px rgba(205,150,80,0.22); }
     100%{ opacity:1; filter:blur(0); text-shadow:0 0 0 rgba(205,150,80,0); }
   }
   .tag{
@@ -156,41 +173,140 @@
   }
   @media (prefers-reduced-motion: reduce){ .enter .drip::after{ animation:none; top:60%; } }
 
-  /* ================= NAV ================= */
-  nav{
-    position:fixed; top:0; right:0; height:100svh;
-    padding-top:calc(env(safe-area-inset-top,0px) + 10vh);
-    padding-right:5vw;
-    display:flex; flex-direction:column; align-items:flex-end; gap:22px;
-    z-index:80;
-    opacity:0; pointer-events:none;
-    transition:opacity .6s ease;
+  /* ================= MENU (hamburger + full-screen overlay) ================= */
+  html.menu-open{ overflow:hidden; }
+  .menu-btn{
+    position:fixed; z-index:450;
+    top:calc(env(safe-area-inset-top,0px) + 16px); right:max(18px,4vw);
+    height:46px; min-width:46px; padding:0 18px; border-radius:999px;
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    background:rgba(10,8,6,.5);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
+    border:1px solid var(--line-strong); color:var(--white);
+    font-family:'Archivo',sans-serif; font-size:10.5px; letter-spacing:.2em;
+    cursor:pointer; -webkit-tap-highlight-color:transparent;
+    opacity:0; transform:translateY(-8px); pointer-events:none;
+    transition:opacity .6s ease, transform .6s var(--ease), border-color .3s ease, background .3s ease;
   }
-  nav.show{ opacity:1; pointer-events:auto; }
-  nav a{
-    font-family:'Archivo', sans-serif;
-    font-size:10.5px;
-    letter-spacing:0.18em;
-    color:var(--white-dim);
-    text-decoration:none;
-    display:flex; align-items:center; gap:8px;
-    transition:color .35s ease;
+  .menu-btn.show, html.menu-open .menu-btn{ opacity:1; transform:none; pointer-events:auto; }
+  .menu-btn:hover{ border-color:var(--accent); }
+  .menu-btn:focus-visible, .menu a:focus-visible{ outline:1px solid var(--accent); outline-offset:4px; }
+  body.oc-hide-cursor .menu-btn{ opacity:0 !important; pointer-events:none !important; }
+  .menu-now{ white-space:nowrap; color:var(--white-dim); transition:color .3s ease; }
+  .menu-btn:hover .menu-now{ color:var(--white); }
+  .menu-ico{ position:relative; display:block; width:18px; height:10px; }
+  .menu-ico i{
+    position:absolute; left:0; width:100%; height:1px; background:currentColor;
+    transition:transform .55s var(--ease), top .55s var(--ease);
   }
-  nav a .n{ color:var(--white-dim); transition:color .35s ease; }
-  nav a.active,
-  nav a.active .n{ color:var(--white); }
-  nav a.active .n{ color:var(--accent); }
-  nav a:hover{ color:var(--white); }
-
+  .menu-ico i:nth-child(1){ top:0; }
+  .menu-ico i:nth-child(2){ top:9px; }
+  html.menu-open .menu-ico i:nth-child(1){ top:4.5px; transform:rotate(45deg); }
+  html.menu-open .menu-ico i:nth-child(2){ top:4.5px; transform:rotate(-45deg); }
+  html.menu-open .menu-now{ color:var(--white); }
   @media (max-width:640px){
-    nav{
-      top:0; right:0; left:0; height:auto;
-      flex-direction:row; justify-content:center; gap:0;
-      padding:calc(env(safe-area-inset-top,0px) + 14px) 4vw 12px;
-      background:linear-gradient(180deg, rgba(10,8,6,0.92), rgba(10,8,6,0));
-    }
-    nav a{ display:none; }
-    nav a.active{ display:flex; }
+    .menu-btn{ width:46px; padding:0; }
+    .menu-now{ display:none; }
+  }
+
+  .menu{
+    --menu-x:calc(100% - max(18px,4vw) - 23px);
+    --menu-y:calc(env(safe-area-inset-top,0px) + 39px);
+    position:fixed; inset:0; z-index:440;
+    display:flex; flex-direction:column; justify-content:space-between;
+    padding:calc(env(safe-area-inset-top,0px) + 96px) max(7vw,24px) calc(env(safe-area-inset-bottom,0px) + 28px);
+    background:
+      radial-gradient(ellipse 70% 60% at 88% 0%, rgba(110,74,40,.30), transparent 70%),
+      radial-gradient(ellipse 80% 60% at 0% 100%, rgba(60,40,18,.5), transparent 70%),
+      rgba(8,6,4,.96);
+    -webkit-backdrop-filter:blur(22px); backdrop-filter:blur(22px);
+    overflow-y:auto; overscroll-behavior:contain;
+    visibility:hidden; opacity:0;
+    clip-path:circle(0px at var(--menu-x) var(--menu-y));
+    transition:clip-path .7s var(--ease), opacity .45s ease, visibility 0s linear .7s;
+  }
+  html.menu-open .menu{
+    visibility:visible; opacity:1;
+    clip-path:circle(150vmax at var(--menu-x) var(--menu-y));
+    transition:clip-path 1s var(--ease), opacity .3s ease, visibility 0s;
+  }
+  .menu-inner{
+    width:100%; max-width:1180px; margin:auto;
+    display:grid; grid-template-columns:1fr; gap:44px;
+  }
+  @media(min-width:900px){
+    .menu-inner{ grid-template-columns:1.3fr .7fr; gap:8vw; align-items:end; }
+  }
+  .menu-list{ list-style:none; }
+  .menu-list li{ overflow:hidden; padding-bottom:.06em; }
+  .menu-list a{
+    display:flex; align-items:baseline; gap:1.1rem;
+    padding:.2em 0;
+    font-family:'Cormorant Garamond','Fraunces',Georgia,serif; font-weight:500;
+    font-size:clamp(34px,7vw,66px); line-height:1.08; letter-spacing:-.01em;
+    color:var(--white); text-decoration:none;
+    transform:translateY(112%);
+    transition:transform .5s var(--ease), color .35s ease;
+  }
+  html.menu-open .menu-list a{
+    transform:none;
+    transition:transform 1s var(--ease) calc(var(--i) * 55ms + 160ms), color .35s ease;
+  }
+  .menu-list .n{
+    font-family:'Archivo',sans-serif; font-size:10.5px; letter-spacing:.2em; color:var(--accent);
+    min-width:2.2em; transform:translateY(-1.1em);
+  }
+  .menu-list .t{ display:inline-block; transition:transform .55s var(--ease); }
+  .menu-list a:hover .t, .menu-list a:focus-visible .t{ transform:translateX(12px); }
+  .menu-list a:hover, .menu-list a:focus-visible{ color:var(--wine-light); }
+  .menu-list a.active .t::after{
+    content:""; display:inline-block; width:.2em; height:.2em; border-radius:50%;
+    background:var(--accent); margin-left:.45em; vertical-align:.18em;
+  }
+
+  .menu-side{
+    display:flex; flex-direction:column; gap:26px;
+    opacity:0; transform:translateY(16px);
+    transition:opacity .3s ease, transform .3s ease;
+  }
+  html.menu-open .menu-side{
+    opacity:1; transform:none;
+    transition:opacity 1s ease .6s, transform 1s var(--ease) .6s;
+  }
+  .menu-tree{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:18px 22px; text-decoration:none; color:var(--white);
+    font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:.24em;
+    border:1px solid var(--line-strong);
+    background:linear-gradient(120deg, rgba(150,108,62,.22), rgba(150,108,62,.04));
+    transition:border-color .3s ease, background .3s ease;
+  }
+  .menu-tree:hover{ border-color:var(--accent); background:rgba(150,108,62,.3); }
+  .menu-tree .arr{ color:var(--accent); display:inline-block; transition:transform .4s var(--ease); }
+  .menu-tree:hover .arr{ transform:translate(3px,-3px); }
+  .menu-social{ display:flex; flex-wrap:wrap; gap:12px 28px; }
+  .menu-social a, .menu-dl{
+    font-family:'Archivo',sans-serif; font-size:10.5px; letter-spacing:.18em;
+    color:var(--white-dim); text-decoration:none;
+    border-bottom:1px solid transparent; padding-bottom:3px; width:fit-content;
+    transition:color .3s ease, border-color .3s ease;
+  }
+  .menu-social a:hover, .menu-dl:hover{ color:var(--white); border-color:var(--accent); }
+  .menu-dl{ color:var(--accent); }
+  .menu-motto{
+    font-family:'Cormorant Garamond','Fraunces',serif; font-style:italic;
+    font-size:15px; letter-spacing:.3em; color:var(--white-dim);
+  }
+  .menu-foot{
+    margin-top:36px; font-family:'Archivo',sans-serif; font-size:10px;
+    letter-spacing:.3em; color:var(--white-dim); opacity:.55;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .menu, html.menu-open .menu{ clip-path:none; transition:opacity .2s ease, visibility 0s linear .2s; }
+    html.menu-open .menu{ transition:opacity .2s ease, visibility 0s; }
+    .menu-list a, html.menu-open .menu-list a{ transform:none; transition:color .2s ease; }
+    .menu-side, html.menu-open .menu-side{ transform:none; transition:opacity .2s ease; }
+    .menu-btn{ transform:none; }
   }
 
   /* ================= IDENTITY (manifesto + bio) ================= */
@@ -217,24 +333,8 @@
     gap:6vh;
   }
   @media(min-width:860px){
-    .bio-wrap{ grid-template-columns:38% 1fr; gap:6vw; align-items:start; }
+    .bio-wrap{ grid-template-columns:1fr; }
   }
-  .bio-photo{
-    width:100%;
-    aspect-ratio:4/5;
-    overflow:hidden;
-    background:var(--panel);
-  }
-  .bio-photo img{
-    width:100%; height:100%; object-fit:cover;
-    filter:grayscale(0.55) contrast(1.12) brightness(0.85);
-    opacity:0;
-    transform:translate3d(0,0,0) scale(1.08);
-    transform-origin:center center;
-    will-change:transform;
-    transition:opacity 1.1s cubic-bezier(.19,1,.22,1);
-  }
-  .bio-photo.in img{ opacity:1; }
 
   .bio-text{
     align-self:center;
@@ -621,7 +721,7 @@
   @property --shine{ syntax:'<percentage>'; inherits:false; initial-value:-40%; }
 
   @media (max-width:640px){
-    :root{ --mblur:6px; --mglow:14px; --mglowA:.25; }
+    :root{ --mblur:6px; --mglow:10px; --mglowA:.12; }
   }
 
   @keyframes mflow{
@@ -733,12 +833,6 @@
   #contact{
     background:radial-gradient(ellipse 80% 60% at 50% 100%, rgba(60,40,18,.5), rgba(60,40,18,0) 70%);
   }
-  .bio-photo{ position:relative; }
-  .bio-photo::after{
-    content:""; position:absolute; inset:0; pointer-events:none;
-    background:linear-gradient(160deg, rgba(150,108,62,.34), rgba(10,8,6,.4));
-    mix-blend-mode:multiply;
-  }
 
 
   /* NOMBRE FINAL: todavía más oscuro y vino */
@@ -751,43 +845,7 @@
   #contact{ background:radial-gradient(ellipse 80% 60% at 50% 100%, rgba(60,40,18,.75), rgba(60,40,18,0) 70%); }
   .hero::before{ background:radial-gradient(ellipse 70% 55% at 50% 62%, rgba(60,40,18,.7), rgba(60,40,18,0) 70%); }
 
-  /* =====================================================================
-     BIO — PERGAMINO OSCURO / MALIGNO
-     bordes rasgados (clip-path), quemaduras, manchas de sangre seca,
-     marco de tinta roja y sello ritual
-     ===================================================================== */
-  .bio-text{
-    position:relative; isolation:isolate;
-    padding:clamp(40px,6.5vw,84px) clamp(30px,5.5vw,70px);
-    transform:rotate(-.45deg);
-    filter:drop-shadow(0 22px 34px rgba(0,0,0,.75)) drop-shadow(0 0 26px rgba(150,108,62,.28));
-  }
-  .bio-text::before{
-    content:""; position:absolute; inset:0; z-index:-1;
-    clip-path:polygon(0.00% 0.39%, 3.85% 1.03%, 7.69% 0.28%, 11.54% 0.22%, 15.38% 1.10%, 19.23% 0.80%, 23.08% 0.44%, 26.92% 1.26%, 30.77% 0.02%, 34.62% 0.22%, 38.46% 1.21%, 42.31% 1.24%, 46.15% 1.42%, 50.00% 0.39%, 53.85% 0.73%, 57.69% 0.85%, 61.54% 0.55%, 65.38% 1.22%, 69.23% 1.23%, 73.08% 1.48%, 76.92% 0.83%, 80.77% 0.20%, 84.62% 0.67%, 88.46% 0.30%, 92.31% 0.38%, 96.15% 0.91%, 100.00% 0.20%, 99.74% 3.85%, 99.79% 7.69%, 99.92% 11.54%, 98.95% 15.38%, 99.21% 19.23%, 99.95% 23.08%, 99.11% 26.92%, 99.30% 30.77%, 99.55% 34.62%, 99.03% 38.46%, 99.78% 42.31%, 99.59% 46.15%, 99.85% 50.00%, 99.34% 53.85%, 99.77% 57.69%, 99.36% 61.54%, 99.60% 65.38%, 99.62% 69.23%, 99.82% 73.08%, 99.88% 76.92%, 99.92% 80.77%, 99.39% 84.62%, 99.96% 88.46%, 99.02% 92.31%, 100.00% 96.15%, 99.87% 100.00%, 96.15% 99.60%, 92.31% 99.88%, 88.46% 99.45%, 84.62% 99.99%, 80.77% 99.26%, 76.92% 99.22%, 73.08% 99.00%, 69.23% 99.95%, 65.38% 98.63%, 61.54% 99.61%, 57.69% 98.73%, 53.85% 99.12%, 50.00% 99.63%, 46.15% 99.69%, 42.31% 99.94%, 38.46% 99.87%, 34.62% 97.66%, 30.77% 98.84%, 26.92% 99.28%, 23.08% 99.50%, 19.23% 99.35%, 15.38% 96.63%, 11.54% 98.76%, 7.69% 99.54%, 3.85% 99.87%, 0.00% 99.46%, 0.96% 96.15%, 0.05% 92.31%, 0.14% 88.46%, 0.35% 84.62%, 1.56% 80.77%, 0.01% 76.92%, 0.95% 73.08%, 0.53% 69.23%, 0.38% 65.38%, 0.24% 61.54%, 0.73% 57.69%, 0.57% 53.85%, 0.48% 50.00%, 0.68% 46.15%, 2.57% 42.31%, 0.15% 38.46%, 0.89% 34.62%, 0.33% 30.77%, 0.85% 26.92%, 0.15% 23.08%, 2.08% 19.23%, 0.79% 15.38%, 1.10% 11.54%, 0.47% 7.69%, 0.92% 3.85%);
-    background:
-      url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='260'%20height='260'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20values='0%200%200%200%20.04%20%200%200%200%200%20.015%20%200%200%200%200%20.01%20%200%200%200%20.6%200'/%3E%3C/filter%3E%3Crect%20width='260'%20height='260'%20filter='url(%23n)'/%3E%3C/svg%3E"),
-      url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='700'%20height='700'%3E%3Cfilter%20id='s'%20x='0'%20y='0'%20width='100%25'%20height='100%25'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.011%20.016'%20numOctaves='4'%20seed='5'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20values='0%200%200%200%20.04%20%200%200%200%200%20.015%20%200%200%200%200%20.01%20%201.9%200%200%200%20-.58'/%3E%3C/filter%3E%3Crect%20width='700'%20height='700'%20filter='url(%23s)'/%3E%3C/svg%3E"),
-      radial-gradient(ellipse 22% 16% at 14% 10%, rgba(105,14,22,.34), transparent 72%),
-      radial-gradient(ellipse 18% 20% at 90% 82%, rgba(90,10,18,.30), transparent 72%),
-      radial-gradient(ellipse 40% 30% at 70% 6%, rgba(0,0,0,.45), transparent 70%),
-      radial-gradient(ellipse 80% 75% at 46% 42%, #5a3d27 0%, #3b2618 48%, #1b0f09 100%);
-    box-shadow:
-      inset 0 0 64px 12px rgba(6,2,1,.9),
-      inset 0 0 14px 2px rgba(40,8,4,.95);
-  }
-  .bio-text::after{
-    content:""; position:absolute; z-index:-1; pointer-events:none;
-    inset:clamp(14px,2.2vw,24px);
-    border:1px solid rgba(155,34,48,.42);
-  }
-  .bio-text p{ color:#eadbc6; text-shadow:0 1px 0 rgba(0,0,0,.55); }
-  .bio-text p + p{ margin-top:1.35rem; }
-  .bio-text .origin{ color:#b59f86; }
-  @media (max-width:859px){ .bio-text{ transform:rotate(-.3deg); } }
-  @media (min-width:860px){ .bio-text{ margin-right:clamp(0px,7.5vw,120px); } }
-
-  @media (prefers-reduced-motion: reduce){
+    @media (prefers-reduced-motion: reduce){
     .mgrad, .manifesto .w, .word .lt, .mtitle, .msplit .mw{
       animation:none !important; opacity:1 !important; transform:none !important;
       transition:none !important;
@@ -801,24 +859,14 @@
      bio: cada palabra se enfoca y una luz la cruza en cascada
      manifiesto: al encenderse cada palabra, la cruza un destello
      ===================================================================== */
-  @keyframes bshine{
-    0%,30%{ --shine:-40%; }
-    100%{   --shine:140%; }
+  @keyframes bfocus{
+    from{ opacity:0; filter:blur(6px); }
+    to{   opacity:1; filter:blur(0); }
   }
-  .bio-text p{ --ink:#eadbc6; }
-  .bio-text .origin{ --ink:#b59f86; }
   .bio-text .bw{
-    color:transparent;
-    -webkit-text-fill-color:transparent;
-    background-image:
-      linear-gradient(105deg, transparent calc(var(--shine,-40%) - 16%), rgba(255,244,222,.98) var(--shine,-40%), transparent calc(var(--shine,-40%) + 16%)),
-      linear-gradient(var(--ink), var(--ink));
-    background-repeat:no-repeat;
-    -webkit-background-clip:text; background-clip:text;
-    padding:.05em .04em .12em 0; margin:-.05em -.04em -.12em 0;
-    animation:
-      ignite .65s cubic-bezier(.19,1,.22,1) forwards,
-      bshine 2.3s cubic-bezier(.4,0,.2,1) forwards;
+    color:var(--ink,#eadbc6); -webkit-text-fill-color:currentColor;
+    background:none; padding:0; margin:0; text-shadow:none;
+    animation:bfocus .9s var(--ease) forwards;
     animation-play-state:paused;
   }
   .manifesto .w.lit{
@@ -828,52 +876,126 @@
   }
 
   /* =====================================================================
-     HERO CON VIDEO (webp animado) — integrado en la paleta bronce
-     virado a sepia, viñeta, líneas de escaneo VHS y fundido a negro
+     ADDITIONS — experience + flyer, short bio, linktree
      ===================================================================== */
+  .exp-wrap{
+    margin-top:5vh;
+    display:grid; grid-template-columns:1fr; gap:6vh 6vw; align-items:start;
+  }
+  @media(min-width:900px){ .exp-wrap{ grid-template-columns:1.1fr .9fr; } }
+  .exp-date{
+    font-family:'Cormorant Garamond','Fraunces',Georgia,serif; font-weight:500;
+    font-size:clamp(24px,3vw,30px); letter-spacing:-.01em; line-height:1.1; min-width:220px;
+  }
+  .exp-flyer{
+    margin:0; max-width:520px; width:100%;
+    opacity:0; transform:translateY(16px);
+    transition:opacity .9s cubic-bezier(.19,1,.22,1), transform .9s cubic-bezier(.19,1,.22,1);
+  }
+  .exp-flyer.in{ opacity:1; transform:translateY(0); }
+  .exp-flyer .fl-img{ display:block; overflow:hidden; border:1px solid var(--line-strong); background:#000; }
+  .exp-flyer img{
+    display:block; width:100%; height:auto;
+    filter:sepia(.28) saturate(.85) brightness(.92) contrast(1.04);
+    transition:transform 1.4s var(--ease);
+  }
+  .exp-flyer .fl-img:hover img{ transform:scale(1.03); }
+  .exp-flyer figcaption{
+    margin-top:.9rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem 1rem;
+    font-family:'Archivo',sans-serif; font-size:10px; letter-spacing:.14em; color:var(--white-dim);
+  }
+  .exp-flyer figcaption a{
+    color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line-strong);
+    padding-bottom:2px; transition:color .25s ease, border-color .25s ease;
+  }
+  .exp-flyer figcaption a:hover{ color:var(--white); border-color:var(--accent); }
+
+  .bio-text{ align-self:center; max-width:44rem; }
+  .bio-text p{ max-width:none; }
+  .bio-text .bio-role{
+    --ink:#b08655;
+    font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:.3em; line-height:1;
+  }
+  .bio-text .bio-quote{
+    --ink:#ece8de; margin-top:1.6rem;
+    font-family:'Cormorant Garamond','Fraunces',Georgia,serif; font-style:italic; font-weight:500;
+    font-size:clamp(28px,4.6vw,54px); line-height:1.2; letter-spacing:-.005em;
+  }
+  .bio-text .bio-sound, .bio-text .bio-place{
+    --ink:#a3948f;
+    font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:.2em; line-height:1.9; text-transform:uppercase;
+  }
+  .bio-text .bio-sound{ margin-top:2.4rem; }
+  .bio-text .bio-place{ margin-top:.5rem; }
+  .bio-text .motto{
+    --ink:#b08655; margin-top:2.6rem;
+    font-family:'Cormorant Garamond','Fraunces',Georgia,serif; font-style:italic;
+    font-size:clamp(16px,2vw,20px); letter-spacing:.3em;
+  }
+
+  /* HERO — portrait video (never under text: the clip has two white flashes) */
   .hero{
-    justify-content:flex-end;
-    padding-bottom:max(17vh, 130px);
-    overflow:hidden;
+    justify-content:flex-start; gap:2.2svh;
+    padding:calc(env(safe-area-inset-top,0px) + 6svh) 8vw 15svh;
   }
-  .hero-bg{
-    position:absolute; inset:0; z-index:-2; overflow:hidden; pointer-events:none;
-    opacity:0; animation:heroBgIn 2.4s ease .1s forwards;
-    background:var(--bg);
+  .hero-media{
+    position:relative; flex:none; overflow:hidden; background:#0c0a08;
+    height:min(54svh,149vw); aspect-ratio:712/1266;
+    opacity:0; animation:rise var(--dur) cubic-bezier(.19,1,.22,1) .1s forwards;
   }
-  @keyframes heroBgIn{ to{ opacity:1; } }
-  @keyframes heroSettle{ from{ transform:scale(1.07); } to{ transform:scale(1); } }
-  .hero-bg img{
-    position:absolute; left:0; width:100%; height:118%; top:-12%;
-    object-fit:cover; object-position:50% 50%;
-    filter:grayscale(1) sepia(.62) contrast(1.18) brightness(.72);
-    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 52%,rgba(0,0,0,.55) 76%,transparent 100%);
-            mask-image:linear-gradient(to bottom,#000 0%,#000 52%,rgba(0,0,0,.55) 76%,transparent 100%);
-    animation:heroSettle 7s cubic-bezier(.19,1,.22,1) both;
+  .hero-media img, .hero-media video{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
   }
-  .hero-bg::after{
-    content:""; position:absolute; inset:0;
-    background:
-      repeating-linear-gradient(0deg, rgba(0,0,0,.22) 0 1px, transparent 1px 3px),
-      radial-gradient(ellipse 88% 80% at 50% 40%, transparent 38%, rgba(10,8,6,.8) 100%),
-      linear-gradient(to bottom, rgba(10,8,6,.6) 0%, rgba(10,8,6,0) 24%, rgba(10,8,6,0) 46%, rgba(10,8,6,.82) 80%, var(--bg) 100%);
+  .bio-vid{ opacity:0; transition:opacity .9s ease; }
+  .hero-media.playing .bio-vid{ opacity:1; }
+  .hero-copy{ display:flex; flex-direction:column; align-items:center; }
+  .hero .mark{ width:40px; }
+  .hero .word{ margin-top:1rem; }
+  @media (max-height:700px){ .hero-media{ height:48svh; } }
+  @media (min-width:900px) and (min-aspect-ratio:1/1){
+    .hero{ flex-direction:row; justify-content:center; align-items:center; gap:8vw; padding:0 8vw; text-align:left; }
+    .hero-copy{ order:1; align-items:flex-start; }
+    .hero-media{ order:2; height:min(80svh,780px); }
+    .hero .mark{ width:56px; }
+    .hero .word{ font-size:clamp(48px,8vw,128px); margin-top:2rem; white-space:nowrap; }
   }
-  /* en pantallas verticales (móvil): la imagen ocupa la parte alta y el texto queda debajo */
-  @media (max-aspect-ratio:1/1){
-    .hero-bg img{ top:0; height:57%; object-position:50% 40%; }
-    .hero-bg::after{
-      background:
-        repeating-linear-gradient(0deg, rgba(0,0,0,.22) 0 1px, transparent 1px 3px),
-        radial-gradient(ellipse 105% 50% at 50% 26%, transparent 42%, rgba(10,8,6,.78) 100%),
-        linear-gradient(to bottom, rgba(10,8,6,.5) 0%, rgba(10,8,6,0) 16%, rgba(10,8,6,0) 34%, rgba(10,8,6,.85) 52%, var(--bg) 66%);
-    }
+  .vid-toggle{
+    position:absolute; left:12px; bottom:12px; z-index:3;
+    padding:8px 13px; border:1px solid var(--line-strong); border-radius:999px;
+    background:rgba(10,8,6,.55); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    color:var(--white-dim); font-family:'Archivo',sans-serif; font-size:9px; letter-spacing:.18em;
+    cursor:pointer; opacity:0; transition:opacity .4s ease, color .3s ease, border-color .3s ease;
   }
-  /* legibilidad del nombre sobre la imagen */
-  .hero .word{ filter:drop-shadow(0 4px 26px rgba(0,0,0,.65)); }
-  .hero .tag{ text-shadow:0 1px 14px rgba(0,0,0,.9); }
+  .vid-toggle[hidden]{ display:none; }
+  .hero-media.playing .vid-toggle, .vid-toggle:focus-visible{ opacity:1; }
+  .vid-toggle:hover{ color:var(--white); border-color:var(--accent); }
   @media (prefers-reduced-motion: reduce){
-    .hero-bg{ animation:none; opacity:1; }
-    .hero-bg img{ animation:none; }
+    .hero-media{ opacity:1 !important; animation:none !important; transform:none !important; }
+  }
+
+  .music-more{
+    display:flex; flex-wrap:wrap; align-items:center; gap:.8rem 2rem;
+    padding:2rem 0 0; border-top:1px solid var(--line);
+    font-family:'Archivo',sans-serif; font-size:10px; letter-spacing:.18em; color:var(--white-dim);
+  }
+  .music-more a{
+    color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line-strong);
+    padding-bottom:3px; transition:color .25s ease, border-color .25s ease;
+  }
+  .music-more a:hover{ color:var(--white); border-color:var(--accent); }
+
+  @media (pointer:coarse){ .grain{ animation:none; transform:none; } }
+
+  .contact-links a.tree{
+    margin-top:.7rem; padding:16px 30px;
+    font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:.26em;
+    border:1px solid var(--line-strong);
+    background:linear-gradient(120deg, rgba(150,108,62,.22), rgba(150,108,62,.04));
+  }
+  .contact-links a.tree:hover{ border-color:var(--accent); color:var(--white); }
+
+  @media (prefers-reduced-motion: reduce){
+    .exp-flyer{ opacity:1 !important; transform:none !important; transition:none !important; }
   }
 </style>
 </head>
@@ -882,14 +1004,35 @@
 <div class="grain" aria-hidden="true"></div>
 <div class="cur" id="cur"></div>
 
-<nav id="nav">
-  <a href="#identity" data-n="01"><span class="n">01</span>IDENTITY</a>
-  <a href="#sound" data-n="02"><span class="n">02</span>SOUND</a>
-  <a href="#experience" data-n="03"><span class="n">03</span>EXPERIENCE</a>
-  <a href="#music" data-n="04"><span class="n">04</span>MUSIC</a>
-  <a href="#technical" data-n="05"><span class="n">05</span>TECHNICAL</a>
-  <a href="#oracle" data-n="06"><span class="n">06</span>THE ORACLE</a>
-  <a href="#contact" data-n="07"><span class="n">07</span>CONTACT</a>
+<button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+  <span class="menu-now" id="menuNow" aria-hidden="true">MENU</span>
+  <span class="menu-ico" aria-hidden="true"><i></i><i></i></span>
+</button>
+
+<nav class="menu" id="menu" aria-label="Main menu">
+  <div class="menu-inner">
+    <ul class="menu-list">
+      <li><a href="#identity" data-n="01" style="--i:0"><span class="n">01</span><span class="t">Identity</span></a></li>
+      <li><a href="#sound" data-n="02" style="--i:1"><span class="n">02</span><span class="t">Sound</span></a></li>
+      <li><a href="#experience" data-n="03" style="--i:2"><span class="n">03</span><span class="t">Experience</span></a></li>
+      <li><a href="#music" data-n="04" style="--i:3"><span class="n">04</span><span class="t">Music</span></a></li>
+      <li><a href="#technical" data-n="05" style="--i:4"><span class="n">05</span><span class="t">Technical</span></a></li>
+      <li><a href="#oracle" data-n="06" style="--i:5"><span class="n">06</span><span class="t">The Oracle</span></a></li>
+      <li><a href="#contact" data-n="07" style="--i:6"><span class="n">07</span><span class="t">Contact</span></a></li>
+    </ul>
+    <div class="menu-side">
+      <a class="menu-tree" href="https://linktr.ee/bordakdj" target="_blank" rel="noopener"><span>LINKTREE — ALL LINKS</span><span class="arr">↗</span></a>
+      <div class="menu-social">
+        <a href="https://instagram.com/bordak.ov" target="_blank" rel="noopener">INSTAGRAM</a>
+        <a href="https://soundcloud.com/bordakdj" target="_blank" rel="noopener">SOUNDCLOUD</a>
+        <a href="https://www.mixcloud.com/bordakdj/" target="_blank" rel="noopener">MIXCLOUD</a>
+        <a href="mailto:bordakdj@gmail.com">EMAIL</a>
+      </div>
+      <a class="menu-dl" href="bordak-epk.pdf" download="BORDAK_EPK.pdf">↓ DOWNLOAD EPK (PDF)</a>
+      <div class="menu-motto">SEQVERE LVCEM</div>
+    </div>
+  </div>
+  <div class="menu-foot">BØRDAK · TARRACO / BARCELONA</div>
 </nav>
 
 <a class="dl-epk" id="dlEpk" href="bordak-epk.pdf" download="BORDAK_EPK.pdf" target="_blank" rel="noopener">
@@ -897,15 +1040,19 @@
 </a>
 
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-still.webp">
-      <img src="assets/hero.webp" alt="" width="720" height="405" decoding="async" fetchpriority="high">
-    </picture>
+  <div class="hero-media" id="heroMedia">
+    <img src="assets/bordak-hero-poster.webp" width="712" height="1266" fetchpriority="high" alt="BØRDAK — portrait: hand over one eye, a snake moving across the hand">
+    <video class="bio-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" disablepictureinpicture disableremoteplayback>
+      <source src="assets/bordak-portrait.webm" type="video/webm; codecs=vp9">
+      <source src="assets/bordak-portrait.mp4" type="video/mp4">
+    </video>
+    <button class="vid-toggle" type="button" aria-label="Pause animation">PAUSE</button>
   </div>
-  <img class="mark" src="assets/logo.webp" alt="BØRDAK">
-  <h1 class="word">BØRDAK</h1>
-  <div class="tag">TECHNO RITUAL &amp; VISCERAL</div>
+  <div class="hero-copy">
+    <img class="mark" src="assets/logo.webp" alt="BØRDAK">
+    <h1 class="word">BØRDAK</h1>
+    <div class="tag">TECHNO RITUAL &amp; VISCERAL</div>
+  </div>
   <div class="enter">
     <span>SCROLL TO ENTER</span>
     <div class="drip"></div>
@@ -917,13 +1064,12 @@
   <p class="manifesto mscroll" id="manifesto"></p>
 
   <div class="bio-wrap">
-    <div class="bio-photo" id="bioPhoto">
-      <img src="assets/bio-photo.webp" alt="BØRDAK">
-    </div>
     <div class="bio-text" id="bioText">
-      <p>BØRDAK builds ritual, visceral techno: hypnotic groove, organic percussion, atmospheres that descend into darkness and return to the light.</p>
-      <p>Two nights at Localito 3.0 (Castelldefels) mark a project still finding its shape — driven by a constant pursuit of hypnotic states.</p>
-      <p class="origin">Self-taught, raised on the rhythm of Barcelona's Matinée Group and Madrid's Macumba, Heaven, Fabrik — until finding his own path: the ritual and the visceral.</p>
+      <p class="bio-role">DJ</p>
+      <p class="bio-quote">The point is not to know where the music is going, but to know when to let it take you there.</p>
+      <p class="bio-sound">Hypnotic techno · Dry percussion · Shifting layers of tension</p>
+      <p class="bio-place">Tarraco / Barcelona</p>
+      <p class="motto">SEQVERE LVCEM</p>
     </div>
   </div>
 </section>
@@ -941,10 +1087,30 @@
 
 <section id="experience">
   <div class="sec-mark">03 — EXPERIENCE</div>
-  <div class="exp-row" id="expRow1">
-    <div class="exp-event mgrad mscroll">Localito 3.0</div>
-    <div class="exp-meta">CASTELLDEFELS</div>
-    <div class="exp-meta">TWO PERFORMANCES</div>
+  <div class="exp-wrap">
+    <div class="exp-list">
+      <div class="exp-row" id="expRow1">
+        <div class="exp-event mgrad mscroll">Localito 3.0</div>
+        <div class="exp-meta">CASTELLDEFELS</div>
+        <div class="exp-meta">TWO PERFORMANCES</div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">12 · 02 · 2026</div>
+        <div class="exp-meta">22:30 — 02:30</div>
+        <div class="exp-meta">LOCAL TALENT</div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">11 · 06 · 2026</div>
+        <div class="exp-meta">23:00 — 03:00</div>
+        <div class="exp-meta">LOCAL TALENT</div>
+      </div>
+    </div>
+    <figure class="exp-flyer">
+      <a class="fl-img" href="https://instagram.com/localito3.0" target="_blank" rel="noopener">
+        <img src="assets/flyer-localito-0626.webp" width="1000" height="1000" loading="lazy" alt="Localito 3.0 flyer — BØRDAK, local talent, 11 June 2026">
+      </a>
+      <figcaption><span>LOCALITO 3.0 — 11.06.2026</span><a href="https://instagram.com/localito3.0" target="_blank" rel="noopener">@LOCALITO3.0 ↗</a></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -962,7 +1128,7 @@
     </div>
     <img class="listen-cover" src="assets/cover-1.webp" alt="DOMINA — BØRDAK" loading="lazy">
     <div class="listen-player">
-      <iframe title="DOMINA" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
+      <iframe loading="lazy" title="DOMINA" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
         src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fbordakdj%2Fdomina&color=%238c6a45&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
       </iframe>
     </div>
@@ -979,11 +1145,17 @@
     </div>
     <img class="listen-cover" src="assets/cover-2.webp" alt="The last game 1985 — BØRDAK" loading="lazy">
     <div class="listen-player">
-      <iframe title="The last game 1985" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
+      <iframe loading="lazy" title="The last game 1985" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
         src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fbordakdj%2Fthe-last-game&color=%238c6a45&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
       </iframe>
     </div>
     <div class="listen-foot"><span class="listen-note">HYPNOTIC / RITUAL / PERCUSSIVE</span><a class="listen-link" href="https://soundcloud.com/bordakdj/the-last-game" target="_blank" rel="noopener">OPEN SOUNDCLOUD ↗</a></div>
+  </div>
+
+  <div class="music-more">
+    <span>MORE SESSIONS</span>
+    <a href="https://www.mixcloud.com/bordakdj/" target="_blank" rel="noopener">MIXCLOUD ↗</a>
+    <a href="https://soundcloud.com/bordakdj" target="_blank" rel="noopener">SOUNDCLOUD ↗</a>
   </div>
 </section>
 
@@ -1013,7 +1185,7 @@
 <section id="oracle">
   <div class="sec-mark">06 — THE ORACLE</div>
   <div class="oracle-word mtitle mgrad mscroll" data-i18n="oracleTitle">The Oracle</div>
-  <div class="oracle-sub" data-i18n="oracleSub">Seven cards · Seven arcana · One draw</div>
+  <div class="oracle-sub" data-i18n="oracleSub">Nine cards · Nine arcana · One draw</div>
 
   <div class="oracle-cards">
     <div class="oc-slot">
@@ -1077,6 +1249,8 @@
     <a href="mailto:bordakdj@gmail.com">bordakdj@gmail.com</a>
     <a href="https://instagram.com/bordak.ov" target="_blank" rel="noopener">Instagram — @bordak.ov</a>
     <a href="https://soundcloud.com/bordakdj" target="_blank" rel="noopener">SoundCloud</a>
+    <a href="https://www.mixcloud.com/bordakdj/" target="_blank" rel="noopener">Mixcloud</a>
+    <a class="tree" href="https://linktr.ee/bordakdj" target="_blank" rel="noopener">LINKTREE — ALL LINKS ↗</a>
   </div>
 
 
@@ -1097,14 +1271,14 @@
       cur.style.top = e.clientY + 'px';
       cur.classList.add('on');
     });
-    document.querySelectorAll('a').forEach(function(el){
+    document.querySelectorAll('a, .menu-btn, .oc-btn').forEach(function(el){
       el.addEventListener('mouseenter', function(){ cur.classList.add('grow'); });
       el.addEventListener('mouseleave', function(){ cur.classList.remove('grow'); });
     });
   }
 
   // nav reveal after hero
-  var nav = document.getElementById('nav');
+  var nav = document.getElementById('menuBtn');
   var dlEpk = document.getElementById('dlEpk');
   var hero = document.getElementById('top');
   var navObserver = new IntersectionObserver(function(entries){
@@ -1126,6 +1300,7 @@
       if(entry.isIntersecting){
         links.forEach(function(l){ l.classList.remove('active'); });
         link.classList.add('active');
+        if(window.__setMenuLabel){ window.__setMenuLabel(link); }
       }
     });
   }, { threshold: 0.5 });
@@ -1162,8 +1337,7 @@
   }
 
   // bio photo + text reveal (conjure: words ignite in cascade)
-  var bioPhoto = document.getElementById('bioPhoto');
-  var bioText = document.getElementById('bioText');
+    var bioText = document.getElementById('bioText');
 
   // split each bio paragraph into word spans with staggered ignite delay
   var bioParas = bioText.querySelectorAll('p');
@@ -1181,12 +1355,11 @@
   var bioObserver = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
-        bioPhoto.classList.add('in');
         bioText.classList.add('in');
       }
     });
   }, { threshold: 0.25 });
-  bioObserver.observe(bioPhoto);
+  bioObserver.observe(bioText);
 
   // sound items staggered reveal
   var soundItems = document.querySelectorAll('.sound-item');
@@ -1203,7 +1376,7 @@
   if(soundItems.length){ soundObserver.observe(document.getElementById('soundGrid')); }
 
   // generic reveal-on-enter for experience rows and listen blocks
-  var revealEls = document.querySelectorAll('.exp-row, .listen, .tech-cell');
+  var revealEls = document.querySelectorAll('.exp-row, .exp-flyer, .listen, .tech-cell');
   var revealObserver = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
@@ -1244,7 +1417,7 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var CARDS = [{"key":"devil","img":"assets/tarot-devil.webp","name":{"en":"The Devil","es":"El Diablo"},"animal":{"en":"The Goat","es":"La Cabra"},"phrases":{"past":{"en":["What bound you still holds you.","The desire that shaped you was not yours.","What you surrendered was returned to you in chains."],"es":["Lo que te ató, aún te sostiene.","El deseo que te formó, no era tuyo.","Lo que entregaste, te fue devuelto en cadenas."]},"present":{"en":["What binds you also holds you.","The master does not teach. He initiates.","The abyss is watching you. Do not look away."],"es":["Lo que te ata, también te sostiene.","El maestro no enseña. Inicia.","El abismo te mira. No apartes la vista."]},"future":{"en":["The chains will break. And so will you.","What seemed like condemnation was a door.","The fire that comes does not burn. It transforms."],"es":["Las cadenas se romperán. Y tú con ellas.","Lo que parecía condena, era puerta.","El fuego que viene, no quema. Transforma."]}}},{"key":"hanged","img":"assets/tarot-hanged.webp","name":{"en":"The Hanged Man","es":"El Colgado"},"animal":{"en":"The Bat","es":"El Murciélago"},"phrases":{"past":{"en":["What hung upside down has already fallen.","The night that shaped you still lives within you.","You saw the world upside down. And you were not mad."],"es":["Lo que colgaba del revés, ya cayó.","La noche que te formó, aún te habita.","Viste el mundo al revés. Y no estabas loco."]},"present":{"en":["Night is not the absence of light. It is another way of seeing.","One who dwells in darkness needs no torches.","What you cannot see is watching you."],"es":["La noche no es ausencia de luz. Es otra forma de ver.","El que habita la oscuridad, no necesita antorchas.","Lo que no ves, te está mirando."]},"future":{"en":["You will descend. And from below, you will see everything clearly.","What was inverted will straighten itself. Or not.","The darkness that comes belongs to you."],"es":["Descenderás. Y desde abajo, verás todo claro.","Lo invertido se enderezará. O no.","La oscuridad que viene, es tuya."]}}},{"key":"priestess","img":"assets/tarot-priestess.webp","name":{"en":"The High Priestess","es":"La Sacerdotisa"},"animal":{"en":"The Owl","es":"El Búho"},"phrases":{"past":{"en":["The wisdom you silenced still watches you.","What you saw without being seen is not forgotten.","The silence you kept was your teacher."],"es":["La sabiduría que callaste, aún te observa.","Lo que viste sin ser visto, no se olvida.","El silencio que guardaste, fue tu maestro."]},"present":{"en":["Wisdom does not speak. It observes.","What you see in the moon, you already knew.","The one who sees without being seen knows every secret."],"es":["La sabiduría no habla. Observa.","Lo que ves en la luna, ya lo sabías.","El que ve sin ser visto, conoce todos los secretos."]},"future":{"en":["You will see what you did not want to see. And understand.","The moon will show you what the sun hides.","The knowledge that comes cannot be unlearned."],"es":["Verás lo que no querías ver. Y entenderás.","La luna te mostrará lo que el sol esconde.","El conocimiento que viene, no se puede desaprender."]}}},{"key":"fool","img":"assets/tarot-fool.webp","name":{"en":"The Fool","es":"El Loco"},"animal":{"en":"The Fox","es":"El Zorro"},"phrases":{"past":{"en":["The traveler you were left footprints you still follow.","The cunning you used saved you. Or condemned you.","You left carrying little. And that made you free."],"es":["El viajero que fuiste, dejó huellas que aún sigues.","La astucia que usaste, te salvó. O te condenó.","Partiste ligero. Y eso te hizo libre."]},"present":{"en":["The traveler does not seek a destination. He seeks a path.","Cunning is not a lie. It is survival.","The one who travels light goes farther."],"es":["El viajero no busca destino. Busca camino.","La astucia no es mentira. Es supervivencia.","El que parte ligero de equipaje, llega más lejos."]},"future":{"en":["The path divides. And you already know which one.","What you seek is also seeking you.","You will arrive. But not as you imagined."],"es":["El camino se bifurca. Y tú ya sabes cuál.","Lo que buscas, también te busca.","Llegarás. Pero no como imaginabas."]}}},{"key":"death","img":"assets/tarot-death.webp","name":{"en":"Death","es":"La Muerte"},"animal":{"en":"The Death's-head Moth","es":"La Mariposa Calavera"},"phrases":{"past":{"en":["What died within you has not finished dying.","The cycle you closed is still closing around you.","What you left behind still calls you."],"es":["Lo que murió en ti, aún no ha terminado de morir.","El ciclo que cerraste, te sigue cerrando.","Lo que dejaste atrás, aún te llama."]},"present":{"en":["Death is not an ending. It is a way of flying.","What you carry on your back makes you lighter.","The clock does not run. It flies with you."],"es":["La muerte no es un final. Es una forma de volar.","Lo que llevas en la espalda, te hace más ligero.","El reloj no corre. Vuela contigo."]},"future":{"en":["You will be reborn. But not as you were.","The cycle closes. And another begins.","What is coming, you have already dreamed."],"es":["Renacerás. Pero no como eras.","El ciclo se cierra. Y otro empieza.","Lo que viene, ya lo soñaste."]}}},{"key":"lovers","name":{"en":"The Lovers","es":"Los Enamorados"},"animal":{"en":"The Swans","es":"Los Cisnes"},"img":"assets/tarot-lovers.webp","phrases":{"past":{"en":["What was joined once still leaves a mark.","Two paths met. The choice was already waiting.","What you desired revealed what you were willing to become."],"es":["Lo que una vez se unió aún deja una marca.","Dos caminos se encontraron. La elección ya estaba esperando.","Lo que deseabas reveló en quién estabas dispuesto a convertirte."]},"present":{"en":["The choice before you reveals what you truly value.","Two souls, two paths. Choose without disguise.","What meets you now asks for alignment, not escape."],"es":["La elección ante ti revela lo que realmente valoras.","Dos almas, dos caminos. Elige sin disfraz.","Lo que ahora se encuentra contigo pide coherencia, no huida."]},"future":{"en":["The path you choose will become part of who you are.","What is aligned will draw closer. What is not will fall away.","A union awaits — but only after the choice is made."],"es":["El camino que elijas formará parte de quien eres.","Lo que está alineado se acercará. Lo que no, caerá.","Una unión aguarda — pero solo después de elegir."]}}},{"key":"moon","name":{"en":"The Moon","es":"La Luna"},"animal":{"en":"The Wolf","es":"El Lobo"},"img":"assets/tarot-moon.webp","phrases":{"past":{"en":["Old fears taught you to read shadows as signs.","What you could not see became larger in the dark.","The night you crossed left dreams where certainty should have been."],"es":["Los viejos miedos te enseñaron a leer las sombras como señales.","Lo que no podías ver se hizo más grande en la oscuridad.","La noche que atravesaste dejó sueños donde debía haber certeza."]},"present":{"en":["Not everything before you is what it appears to be.","Walk slowly. The moon reveals the path, not the destination.","Trust what you sense, but do not mistake fear for truth."],"es":["No todo lo que tienes delante es lo que parece.","Camina despacio. La luna revela el camino, no el destino.","Confía en lo que percibes, pero no confundas miedo con verdad."]},"future":{"en":["The fog will thin, but only when you stop chasing shadows.","What is hidden will surface when the night is ready.","You will see more clearly once you stop demanding certainty."],"es":["La niebla se abrirá cuando dejes de perseguir sombras.","Lo oculto saldrá a la superficie cuando la noche esté preparada.","Verás con más claridad cuando dejes de exigir certeza."]}}},{"key":"justice","name":{"en":"Justice","es":"La Justicia"},"animal":{"en":"The Heron","es":"La Garza"},"img":"assets/tarot-justice.webp","phrases":{"past":{"en":["Every choice left a weight on the scales.","What was done cannot be hidden from the balance.","The truth waited beneath everything you refused to name."],"es":["Cada elección dejó un peso en la balanza.","Lo que hiciste no puede ocultarse de la balanza.","La verdad esperaba bajo todo aquello que te negaste a nombrar."]},"present":{"en":["Stand still. The scales demand the truth, not the story.","What is out of balance asks to be named.","The sword cuts through illusion. Leave only what is true."],"es":["Detente. La balanza exige la verdad, no el relato.","Lo que está desequilibrado pide ser nombrado.","La espada corta la ilusión. Deja solo lo que es verdad."]},"future":{"en":["What you set in motion will return to the scales.","The truth will restore what has been disturbed.","Choose cleanly. What follows will carry the weight of your choice."],"es":["Lo que pongas en movimiento volverá a la balanza.","La verdad devolverá el equilibrio a lo que fue alterado.","Elige con claridad. Lo que venga llevará el peso de tu elección."]}}},{"key":"star","name":{"en":"The Star","es":"La Estrella"},"animal":{"en":"The Stag","es":"El Ciervo"},"img":"assets/tarot-star.webp","phrases":{"past":{"en":["After the storm, something in you refused to go dark.","A distant light survived the night you crossed.","What healed in silence became the light you carry now."],"es":["Después de la tormenta, algo en ti se negó a apagarse.","Una luz distante sobrevivió a la noche que atravesaste.","Lo que sanó en silencio se convirtió en la luz que llevas ahora."]},"present":{"en":["The light is not above you. It is already within the path.","Breathe. The water is calm enough to reflect what remains.","Hope does not shout. It waits where the darkness ends."],"es":["La luz no está sobre ti. Ya está dentro del camino.","Respira. El agua está lo bastante quieta para reflejar lo que queda.","La esperanza no grita. Espera donde termina la oscuridad."]},"future":{"en":["The night will open. Follow the light you have chosen.","What was broken can become a new constellation.","Keep walking. The light ahead is not an escape, but a return to yourself."],"es":["La noche se abrirá. Sigue la luz que has elegido.","Lo que se rompió puede convertirse en una nueva constelación.","Sigue caminando. La luz que te espera no es una huida, sino un regreso a ti."]}}}];
-  var I18N = {"en": {"oracleTitle": "The Oracle", "oracleSub": "Five cards \u00b7 Five arcana \u00b7 One draw", "posPast": "PAST", "posPresent": "PRESENT", "posFuture": "FUTURE", "consult": "CONSULT"}, "es": {"oracleTitle": "El Or\u00e1culo", "oracleSub": "Cinco cartas \u00b7 Cinco arcanos \u00b7 Una tirada", "posPast": "PASADO", "posPresent": "PRESENTE", "posFuture": "FUTURO", "consult": "CONSULTAR"}};
+  var I18N = {"en": {"oracleTitle": "The Oracle", "oracleSub": "Nine cards \u00b7 Nine arcana \u00b7 One draw", "posPast": "PAST", "posPresent": "PRESENT", "posFuture": "FUTURE", "consult": "CONSULT"}, "es": {"oracleTitle": "El Or\u00e1culo", "oracleSub": "Nueve cartas \u00b7 Nueve arcanos \u00b7 Una tirada", "posPast": "PASADO", "posPresent": "PRESENTE", "posFuture": "FUTURO", "consult": "CONSULTAR"}};
   var RITUAL_MESSAGES = {"en": ["The ritual has already begun.", "You are not alone in front of the screen.", "Someone is watching with you.", "You cannot stop it. It is already in motion.", "The cards chose you.", "You have drawn this card before.", "The ritual will be completed. With or without you.", "When you close this page, it will remain open.", "You are not alone. You never were.", "The circle has been closed."], "es": ["El ritual ya ha empezado.", "No est\u00e1s solo delante de la pantalla.", "Alguien est\u00e1 mirando contigo.", "No puedes pararlo. Ya est\u00e1 en marcha.", "Las cartas te eligieron a ti.", "Ya te hab\u00edas sacado esta carta antes.", "El ritual se completar\u00e1. Contigo o sin ti.", "Cuando cierres esta p\u00e1gina, seguir\u00e1 abierto.", "No est\u00e1s solo. Nunca lo has estado.", "El c\u00edrculo se ha cerrado."]};
   var RESIDUES = {"en": ["we have seen you", "the ritual continues", "you are not alone", "still open"], "es": ["te hemos visto", "el ritual contin\u00faa", "no est\u00e1s solo", "sigue abierto"]};
 
@@ -1432,59 +1605,7 @@
     if(!busy) maybeTriggerRitual();
   }, 30000);
 
-  // ---------- Cinematic parallax on identity photo ----------
-  // Scroll creates the real depth movement; desktop pointer adds only a subtle lateral drift.
-  var bioPhotoEl = document.getElementById('bioPhoto');
-  if(bioPhotoEl && !reduced){
-    var pImg = bioPhotoEl.querySelector('img');
-    var targetX = 0, targetY = 0, curX = 0, curY = 0;
-    var scrollY = 0, targetScrollY = 0;
-    var maxPointer = 4.5;
-    var maxScroll = 24;
-
-    function clamp(v,min,max){ return Math.max(min, Math.min(max,v)); }
-
-    function updateScrollTarget(){
-      var r = bioPhotoEl.getBoundingClientRect();
-      var centerOffset = (window.innerHeight * 0.5) - (r.top + r.height * 0.5);
-      targetScrollY = clamp((centerOffset / window.innerHeight) * maxScroll, -maxScroll, maxScroll);
-    }
-
-    function ploop(){
-      curX += (targetX - curX) * 0.055;
-      curY += (targetY - curY) * 0.055;
-      scrollY += (targetScrollY - scrollY) * 0.055;
-
-      pImg.style.transform =
-        'translate3d(' +
-        curX.toFixed(2) + 'px,' +
-        (curY + scrollY).toFixed(2) +
-        'px,0) scale(1.08)';
-
-      requestAnimationFrame(ploop);
-    }
-
-    updateScrollTarget();
-    window.addEventListener('scroll', updateScrollTarget, {passive:true});
-    window.addEventListener('resize', updateScrollTarget, {passive:true});
-
-    if(window.matchMedia('(pointer:fine)').matches){
-      bioPhotoEl.addEventListener('mousemove', function(e){
-        var r = bioPhotoEl.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        targetX = -px * maxPointer;
-        targetY = -py * maxPointer;
-      });
-      bioPhotoEl.addEventListener('mouseleave', function(){
-        targetX = 0;
-        targetY = 0;
-      });
-    }
-
-    requestAnimationFrame(ploop);
-  }
-
+  
 })();
 
 </script>
@@ -1553,6 +1674,109 @@
     window.addEventListener('resize', onScroll, { passive: true });
     update();
   }
+})();
+</script>
+
+<script>
+/* BØRDAK — hamburger menu */
+(function(){
+  var html = document.documentElement;
+  var btn  = document.getElementById('menuBtn');
+  var menu = document.getElementById('menu');
+  var now  = document.getElementById('menuNow');
+  if(!btn || !menu) return;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var open = false;
+
+  window.__setMenuLabel = function(link){
+    var t = link.querySelector('.t');
+    if(now && t) now.textContent = link.getAttribute('data-n') + ' — ' + t.textContent.toUpperCase();
+  };
+
+  function setOpen(v, skipFocus){
+    open = v;
+    html.classList.toggle('menu-open', v);
+    btn.setAttribute('aria-expanded', v ? 'true' : 'false');
+    btn.setAttribute('aria-label', v ? 'Close menu' : 'Open menu');
+    if(v){
+      requestAnimationFrame(function(){
+        var a = menu.querySelector('.menu-list a.active') || menu.querySelector('.menu-list a');
+        if(a) a.focus({ preventScroll:true });
+      });
+    } else if(!skipFocus){
+      btn.focus({ preventScroll:true });
+    }
+  }
+
+  btn.addEventListener('click', function(){ setOpen(!open); });
+
+  menu.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if(!a){
+      if(e.target === menu || (e.target.classList && e.target.classList.contains('menu-inner'))) setOpen(false);
+      return;
+    }
+    var href = a.getAttribute('href') || '';
+    if(href.charAt(0) === '#'){
+      e.preventDefault();
+      var target = document.querySelector(href);
+      setOpen(false, true);
+      if(target){
+        setTimeout(function(){
+          target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block:'start' });
+          try{ history.replaceState(null, '', href); }catch(_){}
+        }, 60);
+      }
+    } else {
+      setOpen(false, true);
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(!open) return;
+    if(e.key === 'Escape'){ setOpen(false); return; }
+    if(e.key === 'Tab'){
+      var f = [btn].concat([].slice.call(menu.querySelectorAll('a[href]')));
+      var first = f[0], last = f[f.length - 1];
+      if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+})();
+</script>
+
+<script>
+/* BØRDAK — hero video: starts after load, plays only while visible, respects reduced motion / data saver, can be paused */
+(function(){
+  var box = document.getElementById('heroMedia');
+  if(!box) return;
+  var v = box.querySelector('.bio-vid'), btn = box.querySelector('.vid-toggle');
+  if(!v || !btn) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var conn = navigator.connection || {};
+  if(reduce || conn.saveData === true){ btn.hidden = true; return; }
+  var userPaused = false, visible = false, ready = document.readyState === 'complete';
+  function label(){
+    btn.textContent = v.paused ? 'PLAY' : 'PAUSE';
+    btn.setAttribute('aria-label', v.paused ? 'Play animation' : 'Pause animation');
+  }
+  function start(){
+    if(userPaused || !ready || !visible) return;
+    var p = v.play();
+    if(p && p.catch) p.catch(function(){});
+  }
+  if(!ready) window.addEventListener('load', function(){ ready = true; start(); });
+  v.addEventListener('playing', function(){ box.classList.add('playing'); label(); });
+  v.addEventListener('pause', label);
+  btn.addEventListener('click', function(){
+    if(v.paused){ userPaused = false; start(); } else { userPaused = true; v.pause(); }
+  });
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      visible = e.isIntersecting;
+      if(visible) start(); else v.pause();
+    });
+  }, { threshold:.35 }).observe(box);
 })();
 </script>
 </body>
