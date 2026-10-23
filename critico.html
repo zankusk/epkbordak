@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El Crítico — BØRDAK</title>
+<meta name="description" content="Sube tu flyer y deja que El Crítico lo juzgue sin piedad. Todo en tu navegador.">
+<link rel="canonical" href="https://zankusk.github.io/epkbordak/critico.html">
+<meta name="theme-color" content="#0a0806">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="BØRDAK">
+<meta property="og:title" content="El Crítico — BØRDAK"><meta property="og:description" content="Sube tu flyer y deja que El Crítico lo juzgue sin piedad. Todo en tu navegador.">
+<meta property="og:url" content="https://zankusk.github.io/epkbordak/critico.html"><meta property="og:image" content="https://zankusk.github.io/epkbordak/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="El Crítico — BØRDAK"><meta name="twitter:description" content="Sube tu flyer y deja que El Crítico lo juzgue sin piedad. Todo en tu navegador."><meta name="twitter:image" content="https://zankusk.github.io/epkbordak/og.jpg">
+
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0806; --bone:#e4dccd; --dim:#9a8f84; --bronze:#b08655;
+  --line:rgba(228,220,205,.14); --line-strong:rgba(228,220,205,.28);
+  --serif:'Cormorant Garamond','Cormorant',Georgia,'Times New Roman',serif;
+  --sans:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  /* alias para el Oráculo */
+  --accent:var(--bronze); --white:var(--bone); --white-dim:var(--dim); --white-bright:var(--bone);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--bone);font-family:var(--serif);font-weight:500;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:1px solid var(--bronze);outline-offset:4px}
+::selection{background:var(--bronze);color:var(--bg)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+.label{font-family:var(--sans);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);font-weight:400}
+.dim{color:var(--dim)}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 max(6vw,22px)}
+.sec{padding:clamp(88px,16svh,170px) 0}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+body{cursor:auto}
+.back{position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);left:max(6vw,22px);z-index:500;font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
+.back:hover{color:var(--bone)}
+.cr{max-width:980px;margin:0 auto;padding:max(15vh,96px) max(6vw,22px) 12vh}
+.cr h1{font-weight:500;font-size:clamp(44px,9vw,92px);line-height:.95;margin:18px 0 22px;letter-spacing:.005em}
+.cr h1 em{color:var(--bronze);font-weight:500}
+.sub{font-size:clamp(18px,2.4vw,22px);line-height:1.45;color:var(--dim);max-width:34em}
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:44px 0 20px;padding:44px 20px;border:1px solid var(--line-strong);cursor:pointer;text-align:center;transition:border-color .3s,background .3s}
+.drop:hover,.drop.on{border-color:var(--bronze);background:rgba(176,134,85,.06)}
+.drop input{position:absolute;opacity:0;width:1px;height:1px}
+.drop:focus-within{outline:1px solid var(--bronze);outline-offset:4px}
+.drop-t{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--bone)}
+.drop-s{font-style:italic;color:var(--dim);font-size:17px}
+.res{margin-top:46px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,56px);align-items:start;animation:in .8s var(--ease) both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.res-img{position:relative}
+.res-img img{width:100%;height:auto;border:1px solid var(--line)}
+.stamp{position:absolute;right:-8px;bottom:18px;transform:rotate(-7deg);font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze);padding:9px 12px;background:rgba(10,8,6,.88)}
+.res-txt h2{font-weight:500;font-size:clamp(28px,4.2vw,42px);line-height:1.08;margin:10px 0 22px}
+.meter{height:3px;background:var(--line);position:relative}
+.bar{position:absolute;inset:0 auto 0 0;width:0;background:var(--bronze);transition:width 1.2s var(--ease)}
+.mlabel{display:flex;justify-content:space-between;gap:10px;margin:9px 0 26px;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.mlabel #score{color:var(--bone)}
+#lines{list-style:none;display:grid;gap:14px;margin-bottom:28px}
+#lines li{font-size:clamp(18px,2.2vw,21px);line-height:1.4;padding-left:18px;position:relative}
+#lines li::before{content:"";position:absolute;left:0;top:.72em;width:7px;height:1px;background:var(--bronze)}
+.fix,.spare{font-size:clamp(18px,2.2vw,21px);line-height:1.4;margin-bottom:22px}
+.fix .label,.spare .label{display:inline-block;margin-bottom:4px}
+.again{font-family:var(--sans);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--bone);background:none;border:1px solid var(--line-strong);padding:14px 22px;cursor:pointer;transition:border-color .3s}
+.again:hover{border-color:var(--bronze)}
+.fine{margin-top:56px;font-style:italic;color:var(--dim);font-size:16px;max-width:34em}
+@media(max-width:720px){.res{grid-template-columns:minmax(0,1fr)}.stamp{right:6px}}
+
+[hidden]{display:none!important}
+.msg{font-style:italic;color:var(--bronze);font-size:18px;margin:10px 0}
+.drop input{top:0;left:0}
+.drop{position:relative}
+
+.drop input{position:absolute!important;inset:0;width:100%!important;height:100%!important;opacity:0;cursor:pointer;font-size:200px}
+
+.modes{display:flex;gap:0;margin:38px 0 0;border:1px solid var(--line-strong);width:max-content;max-width:100%}
+.modes button{font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);background:none;border:0;padding:14px 20px;cursor:pointer}
+.modes button+button{border-left:1px solid var(--line-strong)}
+.modes button[aria-pressed=true]{color:var(--bg);background:var(--bronze)}
+.drop{margin-top:18px!important}
+
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+#askBtn{border-color:var(--bronze);color:var(--bronze)}
+.bridge{margin-top:20px}
+.bridge-ok{font-style:italic;color:var(--bronze);font-size:17px;margin-bottom:10px}
+.bridge textarea{width:100%;background:rgba(228,220,205,.04);color:var(--dim);border:1px solid var(--line);font:14px/1.5 var(--sans);padding:12px;resize:vertical}
+
+.fine{touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;padding:14px 0}
+
+.acts{flex-direction:column;align-items:stretch}
+#askBtn{width:100%;padding:22px 20px;font-size:14px;letter-spacing:.2em;background:var(--bronze);color:var(--bg);border:1px solid var(--bronze);font-weight:500}
+#askBtn:hover{background:var(--bone);border-color:var(--bone)}
+#askBtn[hidden]{display:none}
+#again{width:100%}
+.acts #askBtn{order:-1}
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← BØRDAK</a>
+<main class="cr">
+  <div class="label">El Crítico</div>
+  <h1>Analiza<br><em>mi diseño</em></h1>
+  <p class="sub">Elige qué analizar: flyer, portada o logo. Se mide de verdad: neón, colores, contraste, aire y prueba de miniatura. Luego se juzga sin piedad.</p>
+
+  <div class="modes" role="group" aria-label="Qué analizar"><button type="button" data-m="flyer" aria-pressed="true">Flyer</button><button type="button" data-m="portada" aria-pressed="false">Portada</button><button type="button" data-m="logo" aria-pressed="false">Logo</button></div>
+
+  <div class="drop" id="drop">
+    <span class="drop-t" id="dropt">Elegir flyer</span>
+    <span class="drop-s">toca aquí y elige una imagen</span>
+    <input type="file" id="file" accept="image/*" aria-label="Elegir flyer">
+  </div>
+
+  <p class="msg" id="msg" hidden role="status"></p>
+
+  <section class="res" id="res" hidden aria-live="polite">
+    <div class="res-img"><img id="thumb" alt="Flyer analizado"><div class="stamp" id="stamp"></div></div>
+    <div class="res-txt">
+      <div class="label">Veredicto</div>
+      <h2 id="verdict"></h2>
+      <div class="meter"><div class="bar" id="bar"></div></div>
+      <div class="mlabel"><span>Contenido</span><span id="score"></span><span id="mmax">Paint de sobrino</span></div>
+      <ul id="lines"></ul>
+      <p class="fix"><span class="label">Qué haría yo</span><br><span id="fix"></span></p>
+      <p class="spare"><span class="label">Lo único que se salva</span><br><span id="spare"></span></p>
+      <div class="acts"><button class="again" id="askBtn" type="button" hidden>Pedir mejora a Claude</button><button class="again" id="again" type="button">Probar otro</button></div>
+      <div class="bridge" id="bridge" hidden><p class="bridge-ok" id="bridgeOk"></p><textarea id="bridgeTa" readonly rows="8" aria-label="Mensaje para Claude"></textarea></div>
+    </div>
+  </section>
+
+  <p class="fine"><span id="ver">v10</span> · Todo ocurre en tu navegador: la imagen no se sube a ningún sitio. No es IA, es un algoritmo con mala leche y buen ojo para los láseres.</p>
+</main>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var file=$('file'),drop=$('drop'),res=$('res'),mode='flyer',last=null,cur=null;
+  function pick(a){return a[Math.floor(Math.random()*a.length)]}
+  function pc(x){return Math.round(x*100)}
+  function msg(t){var e=$('msg');e.textContent=t;e.hidden=!t}
+
+  var MODES={
+    flyer:{meter:'Paint de sobrino',what:'flyer'},
+    portada:{meter:'Portada de relleno',what:'portada'},
+    logo:{meter:'Logo de pizzería',what:'logo'}
+  };
+
+  function analyse(img){
+    var W=220,r=img.naturalHeight/img.naturalWidth,H=Math.max(40,Math.round(W*r));
+    var c=document.createElement('canvas');c.width=W;c.height=H;
+    var x=c.getContext('2d',{willReadFrequently:true});
+    x.drawImage(img,0,0,W,H);
+    var a0=x.getImageData(0,0,W,H).data,transp=0;
+    for(var q=3;q<a0.length;q+=4)if(a0[q]<200)transp++;
+    var tf=transp/(W*H);
+    if(tf>.02){x.clearRect(0,0,W,H);x.fillStyle='#8a8a8a';x.fillRect(0,0,W,H);x.drawImage(img,0,0,W,H)}
+    var d=x.getImageData(0,0,W,H).data,n=W*H;
+    var neon=0,sat=0,lum=0,lum2=0,dark=0,hue=new Array(12).fill(0),hueN=0,L=new Float32Array(n),bins={};
+    for(var i=0;i<n;i++){
+      var R=d[i*4]/255,G=d[i*4+1]/255,B=d[i*4+2]/255;
+      var mx=Math.max(R,G,B),mn=Math.min(R,G,B),dl=mx-mn,s=mx?dl/mx:0;
+      var y=.2126*R+.7152*G+.0722*B;L[i]=y;lum+=y;lum2+=y*y;sat+=s;if(y<.12)dark++;
+      if(s>.8&&mx>.8)neon++;
+      var key=(d[i*4]>>5)*64+(d[i*4+1]>>5)*8+(d[i*4+2]>>5);bins[key]=(bins[key]||0)+1;
+      if(s>.35&&mx>.3){var h;if(dl===0)h=0;else if(mx===R)h=((G-B)/dl+6)%6;else if(mx===G)h=(B-R)/dl+2;else h=(R-G)/dl+4;hue[Math.floor(h*2)%12]++;hueN++}
+    }
+    var mean=lum/n,sd=Math.sqrt(Math.max(0,lum2/n-mean*mean));
+    var busy=0,bc=0,cn=0;
+    for(var yy=1;yy<H;yy++)for(var xx=1;xx<W;xx++){
+      var p=yy*W+xx,e=Math.abs(L[p]-L[p-1])+Math.abs(L[p]-L[p-W])>.16;
+      if(e){busy++;if(xx>W*.3&&xx<W*.7&&yy>H*.3&&yy<H*.7)bc++}
+      if(xx>W*.3&&xx<W*.7&&yy>H*.3&&yy<H*.7)cn++;
+    }
+    var busyAll=busy/n,centerBias=busy>0?(bc/Math.max(1,cn))/(busy/n):1;
+    var hues=0;if(hueN>0)for(var k=0;k<12;k++)if(hue[k]/hueN>.07)hues++;
+    var cols=0;for(var b in bins)if(bins[b]/n>.012)cols++;
+    // prueba de miniatura: 32px
+    var t=document.createElement('canvas');t.width=32;t.height=32;var tx=t.getContext('2d',{willReadFrequently:true});
+    tx.fillStyle='#8a8a8a';tx.fillRect(0,0,32,32);tx.drawImage(img,0,0,32,32);
+    var td=tx.getImageData(0,0,32,32).data,tl=0,tl2=0;
+    for(var j=0;j<1024;j++){var yv=(.2126*td[j*4]+.7152*td[j*4+1]+.0722*td[j*4+2])/255;tl+=yv;tl2+=yv*yv}
+    var tsd=Math.sqrt(Math.max(0,tl2/1024-(tl/1024)*(tl/1024)));
+    return{neon:neon/n,sat:sat/n,mean:mean,sd:sd,busy:busyAll,hues:hues,cols:cols,dark:dark/n,centerBias:centerBias,tsd:tsd,tf:tf,
+      w:img.naturalWidth,h:img.naturalHeight,ratio:img.naturalWidth/img.naturalHeight,colored:hueN/n};
+  }
+
+  function judge(m,mode){
+    var s=0,lines=[],worst=[];
+    function add(w,k,txt){s+=w;lines.push(txt);worst.push([w,k])}
+    var thumbDies=m.tsd<.09;
+    if(mode==='flyer'){
+      if(m.neon>.12)add(m.neon>.25?26:18,'neon',pick([
+        'Láseres: '+pc(m.neon)+'% de la imagen. Esto no es un flyer, es el informe de aduanas de una discoteca de 2009.',
+        pc(m.neon)+'% de neón. Si lo imprimes, ahorra en luz para la sala: se ilumina solo y avisa de que no hay idea.',
+        'Tanto láser y ni uno que justifique nada. A este paso la discoteca necesita un extintor y un diseñador.']));
+      if(m.sat>.5)add(14,'sat',pick([
+        'Saturación del '+pc(m.sat)+'%. El flyer no invita: te agarra del cuello y te grita al oído a las cuatro de la tarde.',
+        'Los colores van a todo volumen y el contenido a ninguno. Mucho ruido y poca música.']));
+      if(m.hues>=5)add(16,'hues',pick([
+        m.hues+' tonos distintos. Un flyer no es una caja de rotuladores y tú no eres el niño de la clase de plástica.',
+        m.hues+' colores en guerra, sin hueso en el que ponerse de acuerdo. Ninguno gana, todos nos aburrimos.']));
+      else if(m.hues===4)add(8,'hues','Cuatro colores en juego. No es un crimen, pero ya hay junta de vecinos.');
+      if(m.busy>.2)add(m.busy>.32?20:13,'busy',pick([
+        'El '+pc(m.busy)+'% es ruido de detalle. Cero aire: ni el nombre del DJ sabe dónde sentarse.',
+        'Tan recargado que el artista compite con el fondo y pierde por goleada, en su propio flyer.']));
+      if(m.sd<.16&&m.mean>.15)add(10,'contrast',pick([
+        'Contraste de niebla: a dos metros es una mancha, a diez, un rumor. A estas alturas el mejor cartel es el boca a boca.',
+        'Todo pesa lo mismo, así que nada manda. Eso no es un flyer, es un tablón de anuncios del bloque.']));
+      if(thumbDies)add(10,'thumb','En miniatura, que es como lo verá el 90% de la gente en el feed, es una mancha sin identidad. Cinco segundos y desliza.');
+      if(m.w<900)add(8,'res',pick(['Resolución de '+m.w+' px: impreso se cuentan los píxeles. Al menos ellos no mienten.','Con '+m.w+' px de ancho solo luce si nadie se acerca. Como casi todo lo demás.']));
+      if(m.ratio>1.15)add(7,'fmt','Formato apaisado: en Instagram se queda como un sello de correos y con el mismo prestigio.');
+    }
+    if(mode==='portada'){
+      if(Math.abs(m.ratio-1)>.06)add(16,'fmt',pick(['No es cuadrada ('+m.w+'×'+m.h+'). Las plataformas la van a recortar solas, y no saben dónde está lo importante.','Una portada que no es cuadrada es un favor que le haces al recorte automático. Te va a cortar justo lo que querías enseñar.']));
+      if(m.w<1400)add(14,'res',pick(['Solo '+m.w+' px. Spotify y Bandcamp piden 3000: con eso va a salir blanda como un recuerdo.','Con '+m.w+' px de lado, la portada pide perdón antes de que la veas.']));
+      if(thumbDies)add(20,'thumb',pick(['Prueba de miniatura suspendida: a 64 px es un cuadrado sucio. Y es así como te van a ver el 95% de las veces.','En una lista de reproducción esto desaparece. Un cuadrado que no se lee pequeño no es una portada, es un papel pintado.']));
+      if(m.hues>=4)add(16,'hues',pick([m.hues+' colores. Una portada es una idea; tú has hecho un collage de ideas y no hay ninguna.','Con '+m.hues+' tonos, es difícil saber de qué va el disco. Seguramente el autor tampoco.']));
+      if(m.busy>.22)add(16,'busy',pick(['El '+pc(m.busy)+'% es detalle. Hay tanto que mirar que se acaba sin mirar nada.','Demasiados elementos para un cuadrado de 5 cm. Una idea débil no se arregla con más cosas.']));
+      if(m.neon>.1)add(14,'neon','Neón detectado ('+pc(m.neon)+'%): la estética de generador por defecto. Sobrevivirá poco más que la tendencia que la parió.');
+      if(m.centerBias<.85&&m.busy>.12)add(10,'dom',pick(['No hay protagonista claro: la mirada rebota por los bordes sin saber dónde parar.','Elemento dominante: no encontrado. Búscalo, que tiene que estar por aquí en algún sitio.']));
+      if(m.sd<.15&&m.mean>.15)add(10,'contrast','Contraste de sobremesa de domingo. Una portada tiene que parar el pulgar, no ofrecerle una siesta.');
+    }
+    if(mode==='logo'){
+      if(m.tf>.02)lines.push('Fondo transparente detectado. Bien: así se puede usar en cualquier sitio. Lo analizo sobre gris.');
+      if(m.cols>=5)add(20,'cols',pick(['Más de '+m.cols+' colores o degradados. Un logo con tantos tonos no es un logo, es un escudo de equipo de fútbol de ascenso.','Con degradados y '+m.cols+' tonos, no se imprime en un sello ni en una camiseta. Sirve para un fondo de pantalla de 2008.']));
+      if(m.busy>.14)add(m.busy>.25?24:16,'busy',pick(['Con un '+pc(m.busy)+'% de detalle, el logo necesita su propia carpeta de instrucciones. Los buenos caben en un sello de lacre.','Demasiado complicado: un logo se dibuja con una mano, sin mirar, en una servilleta. Este no.']));
+      if(thumbDies)add(20,'thumb',pick(['A 32 px se funde con el fondo. Un logo que no sobrevive de avatar no sobrevive ni en el perfil de Instagram.','Prueba de avatar suspendida: reducido pierde toda la forma. De lejos es una mancha con aspiraciones.']));
+      if(m.neon>.08||m.sat>.6)add(14,'sat',pick(['Saturación al máximo. Cuando el logo grita color, normalmente es porque no tiene forma.','Colores de caramelo para un asunto que se supone serio. No me creo ni el nombre.']));
+      if(m.hues>=3)add(12,'hues','Tres o más tonos en un logo. Un logo de verdad se defiende en negro sobre blanco; el tuyo necesita ayuda cromática.');
+      if(m.w<512)add(10,'res','Solo '+m.w+' px. Un logo se reduce muy bien, pero se agranda horrible: aquí no se podrá imprimir en una pared.');
+      if(m.ratio>2.6||m.ratio<.4)add(8,'fmt','Formato salchicha. Ni de avatar, ni de sello, ni de pegatina: se queda fuera de todo.');
+      if(m.centerBias<.8&&m.busy>.1)add(8,'dom','La masa del logo no está centrada: tira hacia un lado como un carrito del súper con la rueda rota.');
+    }
+    if(lines.length<3){
+      if(m.colored<.08&&m.dark>.4&&mode!=='logo')lines.push(pick(['Oscuro, silencioso, con espacio. Sospechoso: parece que alguien pensó antes de diseñar.','Poco color y mucha sombra. Cuesta encontrar de qué reírme, y eso me molesta.']));
+      else lines.push(pick(['El algoritmo ha buscado más delitos y no ha encontrado. Se le da un voto de desconfianza.','Poca munición. O está bien, o esconde el problema donde no mira un algoritmo.']));
+    }
+    var found=worst.length;
+    s=Math.min(100,Math.max(4,Math.round(s)));
+    var V={
+      flyer:['Obra del sobrino, con Paint. Con orgullo, pero con Paint.','Sobrino con Photoshop pirata y ganas de sorprender.','Tiene salvación si le quitas la mitad.'],
+      portada:['Portada de generador, sin pensar ni la tendencia. Y se nota.','Portada de Bandcamp de 2011, con ganas pero sin criterio.','Hay una idea, pero está bajo capas de cosas.'],
+      logo:['Logo de pizzería de barrio, en el mejor de los casos.','Logo de gestoría con aspiraciones.','Hay logo, pero necesita adelgazar.']
+    }[mode];
+    var v=s>=75?V[0]:s>=50?V[1]:s>=25?V[2]:(found?'Pasa, pero con la ceja levantada.':'Sorprendentemente contenido. ¿Seguro que es '+(mode==='logo'?'un logo':mode==='portada'?'una portada':'un flyer de techno')+'?');
+    var stamp=s>=75?'Imprimir bajo riesgo propio':s>=50?'Pendiente de revisión':s>=25?'Casi':(found?'Aprobado, por los pelos':'Aprobado');
+    worst.sort(function(a,b){return b[0]-a[0]});
+    var fixes={neon:'Quita todos los láseres. Si algo brilla, que sea una sola cosa y por una razón.',sat:'Baja la saturación a la mitad y deja un único color con sentido.',hues:'Elige un color, uno, y deja el resto en negro y hueso.',busy:'Elimina todo lo que no sea el protagonista. Luego quita un poco más.',contrast:'Decide qué se lee primero y dale el doble de contraste.',res:'Exporta con más resolución antes de publicar: '+(mode==='portada'?'3000 px de lado':mode==='logo'?'al menos 1000 px, mejor vectorial':'1080 px de ancho o más')+'.',fmt:mode==='portada'?'Recórtala a cuadrado 1:1 tú mismo, antes de que lo haga la plataforma.':mode==='logo'?'Dale una versión cuadrada compacta para avatares y sellos.':'Pásalo a vertical 4:5. Instagram te lo agradecerá.',thumb:'Haz la prueba: redúcelo a 64 px y mira si se sigue leyendo. Si no, simplifica hasta que sí.',cols:'Haz una versión de un solo color. Si ya no funciona, no es un logo, es una ilustración.',dom:'Elige un único elemento dominante y colócalo donde mira primero el ojo.'};
+    var fix=worst.length?fixes[worst[0][1]]:'Nada urgente. Prueba a quitar un elemento y mira si se nota.';
+    var spare=m.sd>.2?'El contraste: algo se va a ver desde lejos.':(m.dark>.35&&mode!=='logo')?'Hay oscuro. Con el oscuro se puede construir.':m.tsd>.12?'Aguanta bien en miniatura. No es poco.':m.w>=1080?'La resolución: por lo menos se ve nítido el desastre.':'Existe, y mucha gente ni eso. Es un comienzo.';
+    return{s:s,v:v,stamp:stamp,lines:lines.slice(0,5),fix:fix,spare:spare};
+  }
+
+  function render(img,url){
+    var m=analyse(img),j=judge(m,mode);cur={m:m,j:j,mode:mode};window.__cur=cur;$('bridge').hidden=true;
+    $('thumb').src=url;$('stamp').textContent=j.stamp;$('verdict').textContent=j.v;
+    $('score').textContent=j.s+' / 100';$('mmax').textContent=MODES[mode].meter;
+    var ul=$('lines');ul.innerHTML='';j.lines.forEach(function(t){var li=document.createElement('li');li.textContent=t;ul.appendChild(li)});
+    $('fix').textContent=j.fix;$('spare').textContent=j.spare;
+    msg('');res.hidden=false;$('bar').style.width='0';
+    requestAnimationFrame(function(){requestAnimationFrame(function(){$('bar').style.width=j.s+'%'})});
+  }
+  function show(url,f){
+    var img=new Image();
+    img.onload=function(){last={img:img,url:url};render(img,url);res.scrollIntoView({behavior:'smooth',block:'start'})};
+    img.onerror=function(){
+      if(f){var fr=new FileReader();fr.onload=function(){show(fr.result,null)};fr.onerror=function(){msg('[B] El iPhone no me deja leer ese archivo. Si la foto está en iCloud, ábrela primero en Fotos para descargarla, o haz una captura de pantalla y sube la captura.')};fr.readAsDataURL(f)}
+      else msg('[A] No he podido decodificar esa imagen. Haz una captura de pantalla y sube la captura.');
+    };
+    img.src=url;
+  }
+  function handle(f){
+    msg('');
+    if(!f){msg('No ha llegado ningún archivo. Prueba otra vez.');return}
+    msg('Analizando…');
+    try{show(URL.createObjectURL(f),f)}
+    catch(e){var fr=new FileReader();fr.onload=function(){show(fr.result,null)};fr.onerror=function(){msg('[C] No he podido abrir ese archivo.')};fr.readAsDataURL(f)}
+  }
+  file.addEventListener('change',function(){handle(file.files&&file.files[0])});
+  file.addEventListener('input',function(){if(file.files&&file.files[0]&&res.hidden)handle(file.files[0])});
+  ['dragenter','dragover'].forEach(function(e){drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.add('on')})});
+  ['dragleave','drop'].forEach(function(e){drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.remove('on')})});
+  drop.addEventListener('drop',function(ev){handle(ev.dataTransfer.files[0])});
+  $('again').addEventListener('click',function(){res.hidden=true;file.value='';last=null;window.scrollTo({top:0,behavior:'smooth'})});
+  var btns=document.querySelectorAll('.modes button');
+  Array.prototype.forEach.call(btns,function(b){b.addEventListener('click',function(){
+    mode=b.getAttribute('data-m');
+    Array.prototype.forEach.call(btns,function(o){o.setAttribute('aria-pressed',o===b?'true':'false')});
+    $('dropt').textContent='Elegir '+MODES[mode].what;
+    if(last&&!res.hidden)render(last.img,last.url);
+  })});
+})();
+
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var NAMES={flyer:'flyer',portada:'portada',logo:'logo'};
+  function build(c){
+    var m=c.m,j=c.j;
+    return ['Revisa este '+NAMES[c.mode]+' (te lo adjunto) con mi dirección de arte de BØRDAK: techno underground oscuro, ritual y natural; negro profundo, hueso, ceniza, bronce; fotografía analógica cruda con grano; un único elemento dominante; claroscuro con luz lateral dura; tipografía editorial discreta; sin neones, sin acabados plásticos, sin símbolos sin significado.',
+      '',
+      'Un analizador automático de píxeles ha medido esto (es solo un algoritmo, no ve el contenido):',
+      '- Veredicto: '+j.v+' ('+j.s+'/100)',
+      '- Resolución: '+m.w+'×'+m.h+' px',
+      '- Saturación media: '+Math.round(m.sat*100)+'% · neón: '+Math.round(m.neon*100)+'% · colores distintos: '+m.hues,
+      '- Detalle/recargado: '+Math.round(m.busy*100)+'% · contraste: '+(m.sd>.2?'alto':m.sd>.14?'medio':'bajo'),
+      '- Prueba de miniatura: '+(m.tsd<.09?'suspende':'aprueba'),
+      '- Críticas: '+j.lines.join(' | '),
+      '',
+      'Tú sí ves la imagen. Dame: 1) veredicto en una línea, 2) el problema real (no repitas lo del algoritmo si no es cierto), 3) una mejora concreta y una sola idea dominante, 4) si procede, el prompt para generarla. No hagas preguntas: asume lo razonable y señala la suposición.'].join('\n');
+  }
+  var btn=$('askBtn'),box=$('bridge'),ta=$('bridgeTa'),ok=$('bridgeOk');
+  try{if(/[?&]claude=1/.test(location.search))btn.hidden=false}catch(e){}
+  var taps=0,tt=0,ver=$('ver'),fine=document.querySelector('.fine');
+  if(fine)fine.addEventListener('click',function(){
+    var now=Date.now();taps=(now-tt<1500)?taps+1:1;tt=now;
+    if(taps>=3){btn.hidden=false;if(ver)ver.textContent='v10 ✓'}
+  });
+  btn.addEventListener('click',function(){
+    // cur vive en el closure anterior: se recupera de window
+    var c=window.__cur;if(!c)return;
+    var t=build(c);ta.value=t;box.hidden=false;
+    function done(){ok.textContent='Copiado. Pégalo en tu chat con Claude y adjunta la imagen.';}
+    function fallback(){ta.focus();ta.select();try{document.execCommand('copy');done()}catch(e){ok.textContent='Selecciona el texto y cópialo a mano.'}}
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,fallback);else fallback();
+  });
+})();
+
+</script>
+</body>
+</html>
