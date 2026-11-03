@@ -1,322 +1,377 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>BØRDAK — EPK</title>
-<meta name="description" content="BØRDAK — hypnotic, percussive techno from Tarraco / Barcelona. Official EPK: sessions, technical rider and booking.">
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BØRDAK — DJ techno hipnótico</title>
+<meta name="description" content="BØRDAK — DJ de techno hipnótico, crudo y percusivo. Sesiones, rider y booking.">
+<meta name="theme-color" content="#f7f6f3">
 <link rel="canonical" href="https://zankusk.github.io/epkbordak/">
-<meta name="theme-color" content="#0a0806">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" href="icon-180.png">
-<meta property="og:type" content="website"><meta property="og:site_name" content="BØRDAK">
-<meta property="og:title" content="BØRDAK — EPK"><meta property="og:description" content="BØRDAK — hypnotic, percussive techno from Tarraco / Barcelona. Official EPK: sessions, technical rider and booking.">
-<meta property="og:url" content="https://zankusk.github.io/epkbordak/"><meta property="og:image" content="https://zankusk.github.io/epkbordak/og.jpg">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="BØRDAK — EPK"><meta name="twitter:description" content="BØRDAK — hypnotic, percussive techno from Tarraco / Barcelona. Official EPK: sessions, technical rider and booking."><meta name="twitter:image" content="https://zankusk.github.io/epkbordak/og.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"BØRDAK","genre":["Techno","Hypnotic techno"],"url":"https://zankusk.github.io/epkbordak/","image":"https://zankusk.github.io/epkbordak/og.jpg","sameAs":["https://linktr.ee/bordakdj","https://instagram.com/bordak.ov"]}</script>
-<link rel="preload" as="image" href="bordak-hero-poster.webp" fetchpriority="high">
-<script>document.documentElement.classList.add("js")</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="apple-touch-icon" href="icon-180.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="BØRDAK"><meta property="og:title" content="BØRDAK — DJ techno hipnótico"><meta property="og:description" content="BØRDAK — DJ de techno hipnótico, crudo y percusivo."><meta property="og:url" content="https://zankusk.github.io/epkbordak/"><meta property="og:image" content="https://zankusk.github.io/epkbordak/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>@font-face{font-family:'Cormorant Garamond';src:url(cormorant.ttf) format('truetype');font-weight:300 700;font-style:normal;font-display:swap}@font-face{font-family:'Cormorant Garamond';src:url(cormorant-italic.ttf) format('truetype');font-weight:300 700;font-style:italic;font-display:swap}@font-face{font-family:'Anton';src:url(anton.ttf) format('truetype');font-display:swap}@font-face{font-family:'Archivo';src:url(archivo.ttf) format('truetype');font-weight:100 900;font-display:swap}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,500&display=swap">
 <style>
-:root{
-  --bg:#0a0806; --bone:#e4dccd; --dim:#9a8f84; --bronze:#b08655;
-  --line:rgba(228,220,205,.14); --line-strong:rgba(228,220,205,.28);
-  --serif:'Cormorant Garamond','Cormorant',Georgia,'Times New Roman',serif;
-  --sans:'Archivo','Helvetica Neue',Arial,sans-serif;
-  --ease:cubic-bezier(.16,1,.3,1);
-  /* alias para el Oráculo */
-  --accent:var(--bronze); --white:var(--bone); --white-dim:var(--dim); --white-bright:var(--bone);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{background:var(--bg);scroll-behavior:smooth}
-body{background:var(--bg);color:var(--bone);font-family:var(--serif);font-weight:500;-webkit-font-smoothing:antialiased;overflow-x:hidden;
-  padding-bottom:env(safe-area-inset-bottom,0px)}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-:focus-visible{outline:1px solid var(--bronze);outline-offset:4px}
-::selection{background:var(--bronze);color:var(--bg)}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
-.label{font-family:var(--sans);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);font-weight:400}
-.dim{color:var(--dim)}
-.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 max(6vw,22px)}
-.sec{padding:clamp(88px,16svh,170px) 0}
-.js .rv{opacity:0;transform:translateY(18px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+/* Layout: marfil editorial, díptico en el hero, titulares Anton, bloque oscuro suave para INSTINCT y Groove, meandro griego como hilo */
+:root{--bg:#f7f6f3;--ink:#1b1916;--dim:#686158;--bronze:#80613c;--line:rgba(27,25,22,.16);--block:#23201c;--bone:#e8e1d2;
+--display:'Anton','Impact','Arial Narrow',sans-serif;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Archivo','Helvetica Neue',Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+img,video{display:block;width:100%;height:auto}
+a{color:inherit}
+.w{max-width:1240px;margin:0 auto}
+.lab{font:500 11px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.h2{font:400 clamp(44px,9vw,128px)/.95 var(--display);text-transform:uppercase;margin:12px 0 0}
+.greek{height:12px;opacity:.55;margin-inline:calc(50% - 50vw);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='12' viewBox='0 0 80 12'%3E%3Cpath d='M0 1H10V11H1V3H8V9H3V5H6 M20 1H30V11H21V3H28V9H23V5H26 M40 1H50V11H41V3H48V9H43V5H46 M60 1H70V11H61V3H68V9H63V5H66' fill='none' stroke='%231b1916' stroke-width='.8'/%3E%3C/svg%3E") repeat-x 0 0/80px 12px}
+.sec{padding:84px 0}
+.seal{display:flex;flex-direction:column;align-items:center;gap:14px;padding:56px 0 12px;text-align:center}
+.seal img{width:clamp(120px,17vw,170px);height:auto;animation:spin 36s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seal span{font:500 10px var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--dim)}
+@media(prefers-reduced-motion:reduce){.seal img{animation:none}}
+.flex{border:1px solid var(--ink);padding:22px 24px;margin-top:30px;display:grid;gap:8px;max-width:760px}
+.flex b{font:400 clamp(22px,3vw,30px)/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.flex p{margin:0;color:#3b3732}
+.priv{display:grid;gap:36px}
+@media(min-width:800px){.priv{grid-template-columns:1fr 1fr;gap:64px;align-items:start}}
+.priv ul{list-style:none;margin:26px 0 0;padding:0}
+.priv li{padding:16px 0;border-top:1px solid var(--line);display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap}
+.priv li:last-child{border-bottom:1px solid var(--line)}
+.priv li b{font:400 24px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.priv li span{color:var(--dim);max-width:28ch}
+/* barra */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin-inline:calc(50% - 50vw);padding:14px max(16px,calc(50vw - 620px));display:flex;justify-content:space-between;align-items:center;gap:16px;background:rgba(247,246,243,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .mk{font:300 22px var(--serif);letter-spacing:.32em;text-decoration:none}
+.bar nav{display:flex;gap:22px;align-items:center}
+.bar nav a{font:500 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--dim)}
+.bar nav a:hover{color:var(--ink)}
+.bar nav a.epk{border:1px solid var(--ink);color:var(--ink);padding:9px 14px}
+.mb{display:none;font:500 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;background:none;border:1px solid var(--ink);padding:10px 14px;color:var(--ink)}
+@media(max-width:860px){.mb{display:block}.bar nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:flex-start;gap:0;padding:8px max(16px,env(safe-area-inset-left,0px)) 18px;background:var(--bg);border-bottom:1px solid var(--line)}.bar nav.open{display:flex}.bar nav a{padding:14px 0;width:100%;font-size:13px;border-bottom:1px solid var(--line)}.bar nav a.epk{margin-top:12px;text-align:center;width:auto}}
+/* hero */
+.hero{position:relative;margin-inline:calc(50% - 50vw);height:100svh;min-height:620px;max-height:1100px;background:#000;overflow:hidden;padding:0}
+.pair{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:100%;background:#000;overflow:hidden}
+.pair>*{width:100%;height:100%;max-height:100%;object-fit:cover;min-width:0;display:block;align-self:stretch}
+.pair img{object-position:58% 50%}
+.pair video{object-position:50% 50%}
+@media(max-width:700px){.pair img{object-position:82% 50%}.pair video{object-position:56% 50%}}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 16%),linear-gradient(to top,rgba(0,0,0,.94) 0,rgba(0,0,0,.8) 22%,rgba(0,0,0,.4) 42%,rgba(0,0,0,0) 60%)}
+.hcopy{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:0 max(18px,env(safe-area-inset-left,0px)) calc(clamp(26px,5vh,48px) + env(safe-area-inset-bottom,0px));text-align:center;display:flex;flex-direction:column;align-items:center;color:#f1ece1}
+.hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(46px,12.2vw,150px);line-height:.95;letter-spacing:.2em;padding-left:.2em;margin:0 0 14px;color:#f4efe4;white-space:nowrap}
+.hcopy p{margin:0 0 24px;max-width:46ch;font:400 clamp(15px,1.7vw,19px)/1.45 var(--sans);color:#d8d1c3}
+.hcopy .btn.big{background:#efe9dc;color:#111;border-color:#efe9dc}
+.hcopy .btn.big:hover{background:transparent;color:#efe9dc}
+/* barra sobre el hero: transparente arriba, marfil al hacer scroll */
+.bar{position:fixed;left:0;right:0;top:0;margin-inline:0;transition:background .35s,border-color .35s}
+.bar:not(.solid){background:transparent;border-bottom-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none}
+.bar:not(.solid) .mk,.bar:not(.solid) nav a{color:#efe9dc}
+.bar:not(.solid) nav a.epk,.bar:not(.solid) .mb{border-color:#efe9dc;color:#efe9dc}
+@media(max-width:860px){.bar.solid nav a,.bar.solid nav a.epk{color:var(--ink)}}
+.btn.big{padding:19px 38px;font-size:12.5px;box-shadow:0 10px 28px -10px rgba(27,25,22,.5)}
+.btn{display:inline-block;border:1px solid var(--ink);padding:17px 28px;font:500 12px var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;background:var(--ink);color:var(--bg)}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.o{background:transparent;color:var(--ink)}
+.btn.o:hover{background:var(--ink);color:var(--bg)}
+/* bio */
+.bio{display:grid;gap:36px}
+.bio .big{font:400 clamp(40px,8vw,112px)/1 var(--display);text-transform:uppercase;margin:0}
+.bio .big span{color:var(--bronze)}
+.bio .cols{display:grid;gap:28px;max-width:900px}
+@media(min-width:800px){.bio .cols{grid-template-columns:1fr 1fr;gap:56px}}
+.bio p{margin:0;color:#3b3732;max-width:44ch}
+.bio>.q{margin:0;max-width:24em}
+.bio .q{font:italic 500 clamp(24px,3vw,34px)/1.2 var(--serif);color:var(--ink)}
+/* géneros */
+.g{list-style:none;margin:40px 0 0;padding:0}
+.g li{display:grid;grid-template-columns:44px 1fr;gap:12px 14px;padding:22px 0;border-top:1px solid var(--line);align-items:center}
+.g li:last-child{border-bottom:1px solid var(--line)}
+.g .n{font:500 12px var(--sans);letter-spacing:.15em;color:var(--dim)}
+.g .t{font:400 clamp(44px,10vw,132px)/1 var(--display);text-transform:uppercase}
+.g .tx{min-width:0}.g .tx p{margin:10px 0 0;max-width:36ch;color:#4b463f}
+.g .p{grid-column:1/-1;aspect-ratio:4/3;overflow:hidden;background:#111}
+.g .p img{height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04)}
+@media(min-width:800px){.g li{grid-template-columns:60px 1fr 250px}.g li .tx{grid-column:2}.g .p{grid-column:3;grid-row:1;aspect-ratio:4/5}}
+.sub{margin-top:14px;max-width:46ch;color:#3b3732}
+/* bloques oscuros */
+.inst-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.inst-head .h2{font-size:clamp(70px,17vw,250px)}
+.inst-head p{max-width:30ch;margin:0;color:var(--dim);font:300 22px/1.25 var(--serif)}
+.ses{display:grid;gap:28px;margin-top:44px;grid-template-columns:1fr}
+@media(min-width:800px){.ses{grid-template-columns:repeat(2,1fr);gap:34px 28px}}
+.ses article{min-width:0}
+.ses h3{font:400 28px/1 var(--display);text-transform:uppercase;margin:14px 0 4px;letter-spacing:.02em}
+.ses iframe{width:100%;height:166px;border:0;margin-top:12px;background:#e9e7e2}
+.ses .pend{margin-top:12px;border:1px dashed var(--line);padding:14px;font:500 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.ses a.go{display:inline-block;margin-top:10px;font:500 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+/* directo */
+.live{display:grid;gap:30px}
+@media(min-width:800px){.live{grid-template-columns:1fr 1fr;gap:64px;align-items:end}}
+.dates .row{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;padding:18px 0;border-top:1px solid var(--line)}
+.dates .row:last-child{border-bottom:1px solid var(--line)}
+.dates b{font:400 clamp(28px,4vw,44px)/1 var(--display);letter-spacing:.02em}
+.dates span{color:var(--dim);max-width:30ch}
+/* rider */
+.gg{margin-top:44px}
+.gg>.lab{margin-bottom:12px}
+.gear-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:800px){.gear-grid{grid-template-columns:repeat(4,1fr)}}
+.gear{margin:0;min-width:0}
+.gear .ph{background:#0f0e0d;aspect-ratio:4/5;overflow:hidden}
+.gear .ph img{height:100%;object-fit:cover}
+.gear h3{font:400 22px/1 var(--display);text-transform:uppercase;margin:10px 0 2px}
+.gear p{margin:0;color:var(--dim);font-size:13px}
+.gear.txt{border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;justify-content:flex-end}
+.note{margin-top:34px;max-width:60ch;color:#3b3732}
+
+/* Diseño visual como servicio complementario, separado del booking DJ */
+.design-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:36px;border-top:1px solid var(--line)}
+.design-grid article{padding:24px 0;border-bottom:1px solid var(--line)}
+.design-grid article>span{font:500 10px var(--sans);letter-spacing:.2em;color:var(--bronze)}
+.design-grid h3{font:400 clamp(34px,5vw,58px)/1 var(--display);text-transform:uppercase;margin:12px 0}
+.design-grid p{max-width:48ch;color:#4b463f;margin:0}
+.design-note{font:500 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:24px}
+@media(min-width:800px){.design-grid{grid-template-columns:1fr 1fr;column-gap:44px}.design-grid article+article{padding-left:34px;border-left:1px solid var(--line)}}
+
+/* contacto */
+.mail{display:block;font:300 clamp(30px,6.4vw,88px)/1.05 var(--serif);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:10px;margin-top:26px;overflow-wrap:anywhere}
+.langs{margin:22px 0 0;font:300 clamp(22px,2.6vw,30px)/1.25 var(--serif);max-width:30em}
+.langs em{color:var(--dim)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:26px 0 44px;border-top:1px solid var(--line)}
+footer a{text-decoration:none}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity 1.1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
 .js .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}}
 
-/* ---------- barra ---------- */
-.bar{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;
-  padding:calc(env(safe-area-inset-top,0px) + 14px) max(6vw,22px) 14px;
-  background:rgba(10,8,6,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
-  opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .5s ease,transform .5s ease}
-.bar.show{opacity:1;transform:none;pointer-events:auto}
-.bar-mark{font-size:18px;letter-spacing:.14em;color:var(--bone)}
-.bar nav{display:flex;gap:clamp(14px,3.4vw,30px)}
-.bar nav a{font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);transition:color .3s}
-.bar nav a:hover{color:var(--bone)}
-.bar nav a.epk{color:var(--bronze)}
-@media (max-width:359px){.bar nav a.opt{display:none}}
 
-/* ---------- umbral ---------- */
-@keyframes heroFade{from{opacity:0}to{opacity:1}}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.hero{position:relative;height:100vh;height:100svh;min-height:540px;overflow:hidden;isolation:isolate}
-.hero-media{position:absolute;inset:0;z-index:-1;overflow:hidden;background:#0c0a08;opacity:0;animation:heroFade 1.4s ease .1s forwards}
-.hero-media img,.hero-media video{position:absolute;left:0;top:-7svh;width:100%;height:calc(100% + 7svh);object-fit:cover;object-position:62% 0%}
-.hero-media::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(10,8,6,.55) 0%,rgba(10,8,6,0) 20%),
-             linear-gradient(0deg,var(--bg) 0%,rgba(10,8,6,.94) 28%,rgba(10,8,6,.72) 46%,rgba(10,8,6,0) 72%)}
-.bio-vid{opacity:0;transition:opacity .9s ease}
-.hero-media.playing .bio-vid{opacity:1}
-.hero-copy{position:absolute;left:0;right:0;z-index:2;bottom:calc(env(safe-area-inset-bottom,0px) + 12svh);padding:0 max(7vw,22px)}
-.hero .mark{width:30px;height:auto;opacity:0;animation:rise 1s var(--ease) .2s forwards}
-.word{margin-top:.8rem;font-weight:500;font-size:clamp(54px,17vw,100px);line-height:1;letter-spacing:.03em;width:fit-content;padding-bottom:.08em;
-  color:#c19563;background:linear-gradient(115deg,#8a6236 0%,#c19563 30%,#f1dfc3 50%,#c19563 70%,#8a6236 100%);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:0;animation:rise 1.2s var(--ease) .45s forwards}
-.hero .tag{margin-top:1rem;opacity:0;animation:rise 1s var(--ease) .9s forwards}
-.hero .tag2{margin-top:.55rem;color:var(--dim);opacity:0;animation:rise 1s var(--ease) 1s forwards}
-.hero-rise{opacity:0;animation:rise 1s var(--ease) 1.15s forwards}
-.hero-quote{max-width:min(30ch,100%);margin-top:1.5rem;font-style:italic;font-size:clamp(21px,5.6vw,27px);line-height:1.28;color:var(--bone)}
-.hero-motto{margin-top:1.2rem;font-style:italic;font-size:clamp(14px,3.8vw,17px);letter-spacing:.34em;color:var(--bronze)}
-.enter{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 2.4svh);left:0;right:0;margin-inline:auto;width:max-content;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:rise 1s var(--ease) 1.4s forwards}
-.enter span{font-family:var(--sans);font-size:10px;letter-spacing:.3em;color:var(--dim)}
-.drip{width:1px;height:28px;background:var(--line-strong);position:relative;overflow:hidden}
-.drip::after{content:"";position:absolute;top:-40%;left:0;width:100%;height:40%;background:var(--bronze);animation:drip 2.6s ease-in-out infinite}
-@keyframes drip{to{top:100%}}
-.vid-toggle{position:absolute;right:14px;top:calc(env(safe-area-inset-top,0px) + 14px);z-index:3;padding:8px 13px;border:1px solid var(--line-strong);border-radius:999px;background:rgba(10,8,6,.55);
-  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--dim);font-family:var(--sans);font-size:9px;letter-spacing:.18em;cursor:pointer;opacity:0;transition:opacity .4s,color .3s,border-color .3s}
-.vid-toggle[hidden]{display:none}
-.hero-media.playing .vid-toggle,.hero-media.blocked .vid-toggle,.vid-toggle:focus-visible{opacity:1}
-.vid-toggle:hover{color:var(--bone);border-color:var(--bronze)}
-@media (max-height:600px) and (max-width:899px){.enter{display:none}}
-@media (max-height:640px) and (max-width:899px){.word{font-size:clamp(44px,13vw,64px)}.hero-quote{margin-top:1rem;font-size:clamp(17px,4.6vw,20px)}.hero-motto{margin-top:.8rem}.hero-copy{bottom:calc(env(safe-area-inset-bottom,0px) + 10svh)}}
-@media (min-width:900px) and (min-aspect-ratio:1/1){
-  .hero-media{left:auto;width:min(60vw,calc(100svh * .8));-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%);mask-image:linear-gradient(90deg,transparent 0,#000 34%)}
-  .hero-media img,.hero-media video{top:0;height:100%;object-position:60% 14%}
-  .hero-media::after{background:linear-gradient(180deg,rgba(10,8,6,.45) 0%,rgba(10,8,6,0) 16%),linear-gradient(0deg,var(--bg) 0%,rgba(10,8,6,0) 20%)}
-  .hero-copy{top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding:0 0 0 7vw;max-width:min(46vw,760px)}
-  .hero .mark{width:48px}.word{margin-top:1.6rem;font-size:clamp(60px,8vw,128px);white-space:nowrap}
-  .hero .tag{margin-top:1.4rem;font-size:11px}.hero .tag2{font-size:11px}
-  .hero-quote{margin-top:2.4rem;max-width:26em;font-size:clamp(24px,2.1vw,34px)}
-  .hero-motto{margin-top:1.8rem;font-size:clamp(15px,1.2vw,19px)}
-  .enter{left:7vw;right:auto;margin-inline:0;align-items:flex-start}
-}
+/* BØRDAK professional edit — v28 */
+.bio{grid-template-columns:1fr;gap:30px}
+.bio .big{font-size:clamp(42px,8vw,106px)}
+.bio-copy{display:grid;grid-template-columns:1fr;gap:20px;max-width:960px}
+.bio-copy p{max-width:75ch;margin:0;color:#3b3732;font-size:clamp(16px,1.35vw,18px);line-height:1.8}
+.sound .h2{max-width:9ch}
+.sound-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:42px;border-top:1px solid var(--line)}
+.sound-grid article{padding:24px 0;border-bottom:1px solid var(--line)}
+.sound-grid article>span{font:500 10px var(--sans);letter-spacing:.2em;color:var(--bronze)}
+.sound-grid h3{font:400 clamp(34px,5vw,58px)/1 var(--display);text-transform:uppercase;margin:12px 0}
+.sound-grid p{max-width:38ch;color:#4b463f;margin:0}
+.sound-line{margin-top:24px;font:500 10px var(--sans);letter-spacing:.18em;color:var(--dim)}
+@media(min-width:800px){.bio{grid-template-columns:.9fr 1.1fr;gap:8vw;align-items:start}.bio-copy{padding-top:18px}.sound-grid{grid-template-columns:repeat(3,1fr);column-gap:34px}.sound-grid article{padding:26px 20px 26px 0}.sound-grid article+article{padding-left:26px;border-left:1px solid var(--line)}}
+/* Footer negro: el emblema de alto contraste se convierte en cierre */
+.closing{margin-inline:calc(50% - 50vw);background:#050505;color:#eee8dc;padding:76px max(18px,calc(50vw - 620px)) 28px;position:relative;overflow:hidden}
+.closing::before,.closing::after{content:"";position:absolute;left:0;right:0;height:12px;opacity:.45;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='12' viewBox='0 0 80 12'%3E%3Cpath d='M0 1H10V11H1V3H8V9H3V5H6 M20 1H30V11H21V3H28V9H23V5H26 M40 1H50V11H41V3H48V9H43V5H46 M60 1H70V11H61V3H68V9H63V5H66' fill='none' stroke='%23e8e1d2' stroke-width='.8'/%3E%3C/svg%3E") repeat-x 0 0/80px 12px}
+.closing::before{top:0}.closing::after{bottom:0}
+.closing-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;flex-direction:column;text-align:center}
+.closing-mark{display:block;width:clamp(200px,32vw,340px);height:auto;animation:sealTurn 40s linear infinite;will-change:transform}
+@keyframes sealTurn{to{transform:rotate(360deg)}}
+.closing-word{font:300 clamp(34px,7vw,64px)/1 var(--serif);letter-spacing:.34em;padding-left:.34em;margin-top:22px}
+.closing-motto{font:500 9px var(--sans);letter-spacing:.25em;color:#9e927f;margin-top:14px}
+.closing footer{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(232,225,210,.2);margin-top:64px;padding-top:20px;color:#9e978c;font:500 9px var(--sans);letter-spacing:.15em}
+.closing footer span:nth-child(2){display:flex;gap:24px}
+.closing footer a{color:#e8e1d2;text-decoration:none}
+.closing footer a:hover{color:#b18b5b}
+@media(prefers-reduced-motion:reduce){.closing-mark{animation:none}}
+@media(max-width:600px){.closing{padding-top:56px}.closing footer{justify-content:center;text-align:center;flex-direction:column}.closing footer span:nth-child(2){justify-content:center}}
 
-/* ---------- ritual (frase única) ---------- */
-#ritual{position:relative;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden}
-#ritual .plate{position:absolute;inset:0;z-index:-1}
-#ritual .plate img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
-#ritual .plate::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(10,8,6,0) 24%,rgba(10,8,6,.35) 52%,rgba(10,8,6,.92) 82%,var(--bg) 100%)}
-#ritual .wrap{padding-bottom:clamp(72px,12svh,140px)}
-.statement{font-style:italic;font-size:clamp(36px,9.2vw,92px);line-height:1.06;letter-spacing:-.01em;max-width:15em;color:var(--bone)}
-.facts{margin-top:clamp(28px,5svh,52px);display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
-.words{font-size:clamp(16px,4vw,24px);font-style:italic;color:var(--dim);letter-spacing:.02em;overflow-wrap:normal}
-.words i{font-style:normal;color:var(--bronze);margin:0 .5em}
 
-/* ---------- sesiones ---------- */
-.sec-head{margin-bottom:clamp(40px,8svh,80px)}
-.session{display:grid;gap:26px;padding:clamp(34px,6svh,60px) 0;border-top:1px solid var(--line)}
-.session:last-child{border-bottom:1px solid var(--line)}
-.session img.cover{width:100%;height:auto;max-width:340px;aspect-ratio:1;object-fit:cover;border:1px solid var(--line)}
-.session h3{font-weight:500;font-size:clamp(36px,8vw,60px);line-height:1.05;margin:.5rem 0 .2rem}
-.session .meta{margin-top:.9rem}
-.player{margin-top:26px}.player iframe{width:100%;height:120px;border:0;display:block;background:#12100d}
-.link{display:inline-block;margin-top:20px;font-family:var(--sans);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);border-bottom:1px solid var(--line-strong);padding-bottom:5px;transition:color .3s,border-color .3s}
-.link:hover{color:var(--bone);border-color:var(--bronze)}
-@media (min-width:860px){.session img.cover{max-width:none}.session{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(34px,5vw,80px);align-items:center}.session.alt{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}.session.alt .cover{order:2}.session.alt .info{order:1}}
-
-/* ---------- directo ---------- */
-.live{display:grid;gap:36px}
-.live h2,.contact h2{font-weight:500;font-size:clamp(40px,9vw,76px);line-height:1.04}
-.flyer{max-width:460px;border:1px solid var(--line-strong);background:#000;display:block}
-.flyer img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
-.flyer figcaption{padding:12px 14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-family:var(--sans);font-size:9.5px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase}
-.flyer figcaption a{color:var(--bronze)}
-.dates{margin-top:30px}
-.row{display:grid;grid-template-columns:1fr;gap:4px;padding:18px 0;border-top:1px solid var(--line)}
-.row:last-child{border-bottom:1px solid var(--line)}
-.row b{font-weight:500;font-size:clamp(24px,5.4vw,32px);letter-spacing:.02em}
-.row span{font-family:var(--sans);font-size:10.5px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase}
-@media (min-width:860px){.live{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,7vw,110px);align-items:center}.row{grid-template-columns:1fr auto}}
-
-/* ---------- contacto ---------- */
-.contact{display:grid;gap:44px}
-.portrait{max-width:340px}
-.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border:1px solid var(--line)}
-.mail{display:inline-block;margin-top:26px;font-size:clamp(24px,6.4vw,50px);line-height:1.1;border-bottom:1px solid var(--line-strong);padding-bottom:6px;word-break:break-word}
-.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-.btn{font-family:var(--sans);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;padding:15px 24px;border:1px solid var(--line-strong);color:var(--bone);transition:border-color .3s,color .3s}
-.btn:hover{border-color:var(--bronze);color:var(--bronze)}
-.tech{margin-top:48px;border-top:1px solid var(--line)}
-.tech div{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:19px;line-height:1.3}
-.tech dt{font-family:var(--sans);font-size:10px;letter-spacing:.24em;color:var(--bronze);text-transform:uppercase;padding-top:6px}
-.tech small{display:block;color:var(--dim);font-size:16px;font-style:italic}
-.seal{margin-top:54px;font-style:italic;font-size:clamp(15px,3.8vw,18px);letter-spacing:.34em;color:var(--bronze)}
-.seal span{display:block;margin-top:8px;color:var(--dim);letter-spacing:.3em;font-size:.88em}
-@media (min-width:860px){.contact{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,7vw,110px);align-items:start}.mail{font-size:clamp(26px,3.4vw,46px)}.portrait{order:2;max-width:none;position:sticky;top:90px}}
-
-.press{margin-top:48px}
-.pgrid{margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.pgrid a{display:block}
-.pgrid img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line);transition:border-color .3s}
-.pgrid a:hover img{border-color:var(--bronze)}
-.pgrid span{display:block;margin-top:8px;font-family:var(--sans);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
-.pgrid a:hover span{color:var(--bronze)}
-@media (min-width:860px){.pgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-footer{padding:36px max(6vw,22px) calc(36px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-between;font-family:var(--sans);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
-footer a:hover{color:var(--bone)}
+/* popup de descarga */
+#dlg{border:1px solid var(--ink);background:var(--bg);color:var(--ink);padding:30px 28px;max-width:min(520px,calc(100vw - 32px));margin:auto}
+#dlg::backdrop{background:rgba(0,0,0,.62)}
+#dlg h3{font:400 clamp(30px,6vw,44px)/1 var(--display);text-transform:uppercase;margin:10px 0 14px}
+#dlg h3 span{color:var(--dim)}
+#dlg p{margin:0 0 10px;color:#3b3732}#dlg .en{font-style:italic;color:var(--dim)}#dlg .pw{font-size:13px;margin-top:14px}
+#dlg .cta{margin-top:20px}#dlg button.btn{cursor:pointer;font-family:var(--sans)}
+.epkrow{margin-top:14px}
 </style>
-</head>
-<body>
-<header class="bar" id="bar">
-  <a class="bar-mark" href="#top" aria-label="BØRDAK — inicio">BØRDAK</a>
-  <nav aria-label="Principal"><a class="opt" href="#music">Sessions</a><a href="#contact">Contact</a><a class="epk" href="bordak-epk.pdf" download="BORDAK_EPK.pdf">EPK ↓</a></nav>
-</header>
+</head><body>
+<script>document.documentElement.classList.add("js")</script>
 
-<section class="hero" id="top">
-  <div class="hero-media" id="heroMedia">
-    <img src="bordak-hero-poster.webp" width="866" height="1541" fetchpriority="high" alt="BØRDAK — retrato: una mano sobre un ojo, una serpiente recorriendo la mano">
-    <video class="bio-vid" muted loop playsinline webkit-playsinline preload="none" poster="bordak-hero-poster.webp" aria-hidden="true" tabindex="-1" disablepictureinpicture disableremoteplayback>
-      <source src="bordak-portrait.webm" type="video/webm; codecs=vp9">
-      <source src="bordak-portrait.mp4" type="video/mp4">
-    </video>
-    <button class="vid-toggle" type="button" aria-label="Pause animation">PAUSE</button>
-  </div>
-  <div class="hero-copy">
-    <img class="mark" src="logo.webp" width="240" height="239" alt="">
-    <h1 class="word">BØRDAK</h1>
-    <div class="label tag">DJ · Techno Ritual &amp; Visceral</div>
-    <div class="label tag2">Tarraco / Barcelona</div>
-    <div class="hero-rise">
-      <p class="hero-quote">The point is not to know where the music is going, but to know when to let it take you there.</p>
-      <p class="hero-motto">SEQVERE LVCEM</p>
-    </div>
-  </div>
-  <div class="enter"><span>SCROLL TO ENTER</span><div class="drip"></div></div>
+<header class="bar"><a class="mk" href="#top" aria-label="BØRDAK, inicio">BØRDAK</a>
+ <nav id="nav" aria-label="Navegación principal"><a href="#bio">Bio</a><a href="#generos">Sonido</a><a href="#music">Sesiones</a><a href="#live">En directo</a><a href="#rider">Rider</a><a href="#design">Diseño</a><a href="#contact">Contacto</a><a class="epk dl" href="bordak-epk-es.pdf" download="BORDAK_EPK_ES.pdf">EPK ↓</a></nav>
+ <button class="mb" id="mb" type="button" aria-expanded="false" aria-controls="nav">Menú</button></header>
+<main class="w" id="top">
+<section class="hero">
+ <div class="pair"><img src="hero-man.webp" width="1254" height="1254" fetchpriority="high" alt="BØRDAK, medio rostro en blanco y negro con el ojo ámbar"><video id="orca" src="orca-loop.mp4" poster="orca-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Ojo de una orca en movimiento lento"></video></div>
+ <div class="hcopy"><h1>BØRDAK</h1><p>Techno hipnótico, crudo y percusivo. Ritmos físicos, tensión progresiva y atmósferas profundas.</p><a class="btn big" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Booking%20Request">Solicitar booking</a></div>
+</section></main>
+<div class="greek" aria-hidden="true"></div>
+<main class="w">
+<section class="sec bio" id="bio">
+ <div><div class="lab">DJ · Tarraco / Barcelona</div><h2 class="big" style="margin-top:14px">Físico.<br>Hipnótico.<br><span>Percusivo.</span></h2></div>
+ <div class="bio-copy">
+  <p>BØRDAK desarrolla sesiones de techno hipnótico, crudo y percusivo. Su sonido combina bombos firmes, bajos profundos y percusiones secas de carácter tribal con capas atmosféricas y tensión progresiva.</p>
+  <p>El resultado busca un equilibrio entre impacto físico y concentración hipnótica: un groove que empuja la pista mientras evoluciona sin perder profundidad. En cabina, la selección se construye leyendo el espacio y dejando que el ritmo marque el recorrido.</p>
+ </div>
 </section>
-
-<section id="ritual" aria-label="Identity">
-  <div class="plate"><img src="foto-circulo.webp" width="1122" height="1402" loading="lazy" alt="BØRDAK de pie dentro de un círculo pintado en el suelo, una serpiente negra enrollada en el brazo"></div>
-  <div class="wrap">
-    <p class="statement rv">I’ll take you down to hell — and we’ll come back to the light.</p>
-    <div class="facts rv">
-      <p class="words">Raw<i>·</i>Deep<i>·</i>Hypnotic<i>·</i>Ritual<i>·</i>Percussive</p>
-      <p class="label dim">Hypnotic techno · Dry percussion · Shifting layers of tension</p>
-    </div>
-  </div>
+<div class="greek" aria-hidden="true"></div>
+<section class="sec" id="generos" style="padding-top:0">
+ <div class="lab">Estilos · Genres</div><h2 class="h2">Four ways<br>down</h2>
+ <ol class="g">
+  <li><span class="n">I</span><div class="tx"><span class="t">Raw</span><p>Textura cruda, carácter industrial y energía sin pulir.</p></div><div class="p"><img src="g-raw.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="BØRDAK con auriculares al cuello, retrato en blanco y negro" style="object-position:50% 38%"></div></li>
+  <li><span class="n">II</span><div class="tx"><span class="t">Deep</span><p>Profundidad, bajos envolventes y atmósferas oscuras.</p></div><div class="p"><img src="g-oscuro.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="Hienas avanzando en la oscuridad" style="object-position:38% 60%"></div></li>
+  <li><span class="n">III</span><div class="tx"><span class="t">Hypnotic</span><p>Hipnosis, repetición y evolución progresiva.</p></div><div class="p"><img src="photo-03.webp" width="900" height="1593" loading="lazy" decoding="async" alt="Silueta en un haz de luz" style="object-position:50% 35%"></div></li>
+  <li><span class="n">IV</span><div class="tx"><span class="t">Percussive</span><p>Ritmos secos, percusión tribal y groove físico.</p></div><div class="p"><img src="g-percusivo.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="Cría de elefante entre las patas de dos adultos" style="object-position:50% 48%"></div></li>
+ </ol>
 </section>
+</main>
+<div class="greek" aria-hidden="true"></div>
+<main class="w"><section class="sec" id="music">
+ <div><div class="inst-head"><div><div class="lab">Sesiones · SoundCloud</div><h2 class="h2">Instinct</h2></div><p>Una selección de sesiones que muestra distintas caras de su sonido.</p></div>
+ <div class="ses" id="ses"></div></div>
+</section></main>
+<div class="greek" aria-hidden="true"></div>
 
-<section class="sec" id="music">
-  <div class="wrap">
-    <div class="sec-head rv"><div class="label">Sessions</div></div>
-
-    <article class="session rv">
-      <img class="cover" src="cover-1.webp" width="800" height="800" loading="lazy" alt="DOMINA — BØRDAK">
-      <div class="info">
-        <div class="label">Listen / 01 · 2026 · Studio session · 60 min</div>
-        <h3>DOMINA</h3>
-        <p class="label dim meta">Hypnotic / Dark / Deep</p>
-        <div class="player"><iframe loading="lazy" title="DOMINA — SoundCloud" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fbordakdj%2Fdomina&color=%23b08655&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe></div>
-        <a class="link" href="https://soundcloud.com/bordakdj/domina" target="_blank" rel="noopener">Open SoundCloud ↗</a>
-      </div>
-    </article>
-
-    <article class="session alt rv">
-      <img class="cover" src="cover-2.webp" width="800" height="800" loading="lazy" alt="The last game 1985 — BØRDAK">
-      <div class="info">
-        <div class="label">Listen / 02 · 2026 · Studio session · 60 min</div>
-        <h3>The last game 1985</h3>
-        <p class="label dim meta">Hypnotic / Ritual / Percussive</p>
-        <div class="player"><iframe loading="lazy" title="The last game 1985 — SoundCloud" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fbordakdj%2Fthe-last-game&color=%23b08655&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe></div>
-        <a class="link" href="https://soundcloud.com/bordakdj/the-last-game" target="_blank" rel="noopener">Open SoundCloud ↗</a>
-      </div>
-    </article>
-  </div>
-</section>
-
+<main class="w">
 <section class="sec" id="live">
-  <div class="wrap live">
-    <figure class="flyer rv">
-      <img src="flyer-localito-0626.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Localito 3.0 flyer — BØRDAK, local talent, 11 June 2026">
-      <figcaption><span>Localito 3.0 · 11.06.2026</span><a href="https://instagram.com/localito3.0" target="_blank" rel="noopener">@localito3.0 ↗</a></figcaption>
-    </figure>
-    <div class="rv">
-      <div class="label">Live</div>
-      <h2 style="margin-top:14px">Localito 3.0</h2>
-      <p class="label dim" style="margin-top:14px">Castelldefels · Two performances</p>
-      <div class="dates">
-        <div class="row"><b>12 · 02 · 2026</b><span>22:30 — 02:30 · 2-hour set · Local talent</span></div>
-        <div class="row"><b>11 · 06 · 2026</b><span>23:00 — 03:00 · 2-hour set · Local talent</span></div>
-      </div>
-    </div>
-  </div>
+ <div class="live"><div><div class="lab">Experiencia en directo · 2026</div><h2 class="h2">Localito<br>3.0</h2><p class="lab" style="margin-top:14px">Castelldefels · Dos actuaciones realizadas · <a href="https://instagram.com/localito3.0" target="_blank" rel="noopener" style="color:var(--bronze)">@localito3.0 ↗</a></p></div>
+ <div class="dates"><div class="row"><b>12 · 02 · 2026</b><span>22:30 — 02:30 · Sesión de 2 horas · Talento local</span></div><div class="row"><b>11 · 06 · 2026</b><span>23:00 — 03:00 · Sesión de 2 horas · Talento local</span></div></div></div>
+</section>
+<div class="greek" aria-hidden="true"></div>
+<section class="sec" id="rider">
+ <div class="lab">Requisitos técnicos</div><h2 class="h2">Cabina<br>flexible</h2>
+ <div class="flex"><b>Me adapto a tu sala</b><p>Pincho con estos equipos o con cualquier otra configuración de club. Si tu cabina es distinta, escríbeme antes del evento y lo resolvemos juntos.</p></div>
+ <div class="gg"><div class="lab">Equipos compatibles</div><div class="gear-grid">
+  <figure class="gear"><div class="ph"><img src="rider-cdj-3000.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Pioneer DJ CDJ-3000"></div><figcaption><h3>CDJ-3000</h3><p>Pioneer DJ</p></figcaption></figure>
+  <figure class="gear"><div class="ph"><img src="rider-cdj-2000nxs2.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Pioneer DJ CDJ-2000NXS2"></div><figcaption><h3>CDJ-2000NXS2</h3><p>Pioneer DJ</p></figcaption></figure>
+  <figure class="gear"><div class="ph"><img src="rider-djm-900nxs2.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Pioneer DJ DJM-900NXS2"></div><figcaption><h3>DJM-900NXS2</h3><p>Pioneer DJ</p></figcaption></figure>
+  <figure class="gear txt"><figcaption><h3>DJM-V10</h3><p>Pioneer DJ</p></figcaption></figure>
+  <figure class="gear"><div class="ph"><img src="rider-xone-92.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Allen &amp; Heath Xone:92"></div><figcaption><h3>Xone:92</h3><p>Allen &amp; Heath</p></figcaption></figure>
+  <figure class="gear"><div class="ph"><img src="rider-xone-96.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Allen &amp; Heath Xone:96"></div><figcaption><h3>Xone:96</h3><p>Allen &amp; Heath</p></figcaption></figure></div></div>
+ <p class="note">¿Tu sala tiene otra configuración? <b>Escríbeme antes del evento</b> y confirmamos juntos el equipo disponible.</p>
 </section>
 
+<div class="greek" aria-hidden="true"></div>
+<section class="sec" id="privados">
+ <div class="priv" style="grid-template-columns:1fr"><div><div class="lab">Eventos privados</div><h2 class="h2">Una noche<br>a tu medida</h2><p class="sub">Sets de techno para eventos privados y sesiones a medida. Cuéntame el contexto, el espacio y el tipo de experiencia que buscas.</p><div class="cta"><a class="btn" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Evento%20privado">Consultar disponibilidad</a></div></div>
+ </div>
+</section>
+<div class="greek" aria-hidden="true"></div>
+<section class="sec design" id="design">
+ <div class="lab">Dirección visual · Diseño para eventos</div><h2 class="h2">La música<br>también se ve.</h2>
+ <p class="sub">Diseño flyers y desarrollo visuales temáticos para eventos que necesitan una identidad propia. Cada propuesta parte de un concepto y se adapta al carácter de la música, el espacio y el público.</p>
+ <div class="design-grid">
+  <article><span>01 / COMUNICACIÓN</span><h3>Flyers</h3><p>Diseño de carteles y piezas digitales para anunciar eventos, fiestas y sesiones. Concepto visual, composición y adaptación a formatos para redes.</p></article>
+  <article><span>02 / ATMÓSFERA</span><h3>Visuales</h3><p>Desarrollo de visuales temáticos para pantallas y escenarios: imágenes, secuencias y loops alineados con la identidad del evento.</p></article>
+ </div>
+ <p class="design-note">Proyectos por encargo · Dirección visual y formatos según briefing.</p>
+ <div class="cta"><a class="btn o" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Dise%C3%B1o%20visual">Consultar proyecto de diseño</a></div>
+</section>
+<div class="greek" aria-hidden="true"></div>
 <section class="sec" id="contact">
-  <div class="wrap contact">
-    <div class="info rv">
-      <div class="label">Booking / Contact</div>
-      <a class="mail" href="mailto:bordakdj@gmail.com">bordakdj@gmail.com</a>
-      <div class="cta">
-        <a class="btn" href="https://linktr.ee/bordakdj" target="_blank" rel="noopener">Linktree ↗</a>
-        <a class="btn" href="https://instagram.com/bordak.ov" target="_blank" rel="noopener">Instagram ↗</a>
-        <a class="btn" href="bordak-epk.pdf" download="BORDAK_EPK.pdf">Download EPK · PDF</a>
-      </div>
-      <dl class="tech">
-        <div><dt>Players</dt><dd>2× CDJ-2000NXS2 or 2× CDJ-3000</dd></div>
-        <div><dt>Alternative</dt><dd>2× CDJ-3000 · 1× DJM-V10</dd></div>
-        <div><dt>Mixer</dt><dd>DJM-900NXS2, DJM-V10 or Xone series</dd></div>
-        <div><dt>All-in-one</dt><dd>XDJ-XZ<small>Other setups on request</small></dd></div>
-      </dl>
-      <div class="press" id="press">
-        <div class="label">Press photos</div>
-        <div class="pgrid">
-          <a href="bordak-press-01.jpg" download><img src="press-thumb-01.webp" width="420" height="420" loading="lazy" alt="Foto de prensa 01 — retrato con auriculares"><span>01 · Download</span></a>
-          <a href="bordak-press-02.jpg" download><img src="press-thumb-02.webp" width="420" height="525" loading="lazy" alt="Foto de prensa 02 — de pie en el círculo"><span>02 · Download</span></a>
-          <a href="bordak-press-03.jpg" download><img src="press-thumb-03.webp" width="420" height="525" loading="lazy" alt="Foto de prensa 03 — mano y serpiente"><span>03 · Download</span></a>
-          <a href="bordak-press-04.jpg" download><img src="press-thumb-04.webp" width="420" height="525" loading="lazy" alt="Foto de prensa 04 — vista cenital con serpiente"><span>04 · Download</span></a>
-        </div>
-      </div>
-      <p class="seal">SEQVERE LVCEM<span>VENITE AD ME</span></p>
-    </div>
-    <div class="portrait rv"><img src="foto-retrato.webp" width="1254" height="1254" loading="lazy" alt="BØRDAK — retrato con auriculares al cuello"></div>
-  </div>
+ <div class="lab">Contratación / Contacto</div><h2 class="h2">Hablemos de<br>tu evento</h2>
+ <a class="mail" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Booking%20Request">bordakdj@gmail.com</a>
+ <p class="langs">Puedes escribirme en español o en inglés.<br><em>You can write to me in Spanish or English.</em></p>
+ <div class="cta"><a class="btn" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Booking%20Request">Solicitar booking</a><a class="btn o" href="https://linktr.ee/bordakdj" target="_blank" rel="noopener">Linktree ↗</a><a class="btn o" href="https://instagram.com/bordak.ov" target="_blank" rel="noopener">Instagram ↗</a></div>
+ <div class="cta epkrow"><a class="btn dl" href="bordak-epk-es.pdf" download="BORDAK_EPK_ES.pdf">Descargar EPK ↓</a><a class="btn dl" href="bordak-epk-en.pdf" download="BORDAK_EPK_EN.pdf" lang="en">Download EPK (English) ↓</a></div>
+ <p class="lab" style="margin-top:18px;line-height:1.9">Dossier profesional en PDF (ES / EN) · Protegido con contraseña: <a href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20EPK%20password" style="color:var(--bronze)">solicítala por email</a>.</p>
 </section>
+</main>
+<section class="closing" aria-label="Cierre BØRDAK">
+ <div class="closing-inner">
+  <svg class="closing-mark" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emblema BØRDAK: serpiente ouroboros dentro de una brújula de cuatro ejes">
+  <circle cx="250" cy="250" r="220" stroke="#c8a96e" stroke-width="1" opacity="0.15"/>
+  <circle cx="250" cy="250" r="200" stroke="#c8a96e" stroke-width="1" opacity="0.08"/>
 
-<footer>
-  <span>BØRDAK · Tarraco / Barcelona</span>
-  <a href="oraculo.html">El Oráculo →</a>
-  <a href="critico.html">El Crítico →</a>
-</footer>
+  <line x1="250" y1="50" x2="250" y2="450" stroke="#c8a96e" stroke-width="2.5"/>
+  <line x1="50" y1="250" x2="450" y2="250" stroke="#c8a96e" stroke-width="2.5"/>
+
+  <line x1="109" y1="109" x2="391" y2="391" stroke="#c8a96e" stroke-width="1" opacity="0.3"/>
+  <line x1="391" y1="109" x2="109" y2="391" stroke="#c8a96e" stroke-width="1" opacity="0.3"/>
+
+  <polyline points="250,50 272,92 250,86 228,92 250,50" stroke="#c8a96e" stroke-width="2" fill="none"/>
+  <polyline points="250,450 272,408 250,414 228,408 250,450" stroke="#c8a96e" stroke-width="2" fill="none"/>
+  <polyline points="50,250 92,228 86,250 92,272 50,250" stroke="#c8a96e" stroke-width="2" fill="none"/>
+  <polyline points="450,250 408,228 414,250 408,272 450,250" stroke="#c8a96e" stroke-width="2" fill="none"/>
+
+  <circle cx="250" cy="250" r="90" stroke="#c8a96e" stroke-width="9" fill="none"
+    stroke-dasharray="490 80"
+    stroke-dashoffset="0"
+    stroke-linecap="round"/>
+
+  <g stroke="#060608" stroke-width="1.5" opacity="0.9">
+    <line x1="250" y1="160" x2="256" y2="164"/>
+    <line x1="268" y1="163" x2="272" y2="169"/>
+    <line x1="284" y1="172" x2="286" y2="179"/>
+    <line x1="297" y1="185" x2="297" y2="193"/>
+    <line x1="306" y1="200" x2="304" y2="208"/>
+    <line x1="311" y1="217" x2="308" y2="225"/>
+    <line x1="311" y1="234" x2="307" y2="241"/>
+    <line x1="307" y1="251" x2="302" y2="257"/>
+    <line x1="299" y1="267" x2="293" y2="271"/>
+    <line x1="287" y1="280" x2="281" y2="282"/>
+    <line x1="273" y1="288" x2="267" y2="288"/>
+    <line x1="258" y1="291" x2="252" y2="289"/>
+    <line x1="243" y1="289" x2="238" y2="286"/>
+    <line x1="229" y1="282" x2="225" y2="278"/>
+    <line x1="217" y1="271" x2="215" y2="265"/>
+    <line x1="208" y1="257" x2="208" y2="250"/>
+    <line x1="204" y1="241" x2="206" y2="234"/>
+    <line x1="204" y1="225" x2="208" y2="218"/>
+    <line x1="209" y1="208" x2="214" y2="202"/>
+    <line x1="219" y1="193" x2="225" y2="188"/>
+    <line x1="233" y1="179" x2="240" y2="176"/>
+  </g>
+
+  <ellipse cx="250" cy="162" rx="10" ry="7" fill="#c8a96e" opacity="0.9"/>
+  <line x1="250" y1="155" x2="245" y2="148" stroke="#c8a96e" stroke-width="1.5"/>
+  <line x1="250" y1="155" x2="255" y2="148" stroke="#c8a96e" stroke-width="1.5"/>
+  <circle cx="254" cy="160" r="2" fill="#060608"/>
+  <circle cx="255" cy="160" r="1" fill="#c8a96e" opacity="0.6"/>
+
+  <path d="M 232 168 Q 240 155 250 162" stroke="#c8a96e" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+  <circle cx="250" cy="250" r="22" stroke="#c8a96e" stroke-width="2" fill="none"/>
+  <circle cx="250" cy="250" r="8" stroke="#c8a96e" stroke-width="1.5" fill="none"/>
+  <circle cx="250" cy="250" r="3" fill="#c8a96e"/>
+
+  <g stroke="#c8a96e" stroke-width="2.5">
+    <line x1="250" y1="50" x2="250" y2="38"/>
+    <line x1="450" y1="250" x2="462" y2="250"/>
+    <line x1="250" y1="450" x2="250" y2="462"/>
+    <line x1="50" y1="250" x2="38" y2="250"/>
+  </g>
+
+  <g stroke="#c8a96e" stroke-width="1.5" opacity="0.5">
+    <line x1="109" y1="109" x2="101" y2="101"/>
+    <line x1="391" y1="109" x2="399" y2="101"/>
+    <line x1="391" y1="391" x2="399" y2="399"/>
+    <line x1="109" y1="391" x2="101" y2="399"/>
+  </g>
+</svg>
+
+  <div class="closing-word">BØRDAK</div>
+  <div class="closing-motto">SEQVERE LVCEM · VENITE AD ME</div>
+  <footer><span>DJ · TARRACO / BARCELONA</span><span><a href="https://instagram.com/bordak.ov" target="_blank" rel="noopener">INSTAGRAM ↗</a><a href="mailto:bordakdj@gmail.com">BOOKING ↗</a><a class="dl" href="bordak-epk-es.pdf" download="BORDAK_EPK_ES.pdf">EPK ↓</a></span><span>© BØRDAK 2026</span></footer>
+ </div>
+</section>
 
 <script>
 (function(){
-  var bar=document.getElementById('bar'), hero=document.getElementById('top');
-  new IntersectionObserver(function(e){ bar.classList.toggle('show', !e[0].isIntersecting); },{threshold:.35}).observe(hero);
-  var rv=[].slice.call(document.querySelectorAll('.rv'));
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.15,rootMargin:'0px 0px -6% 0px'});
-    rv.forEach(function(el){ io.observe(el); });
-  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-})();
-/* vídeo del hero: arranca tras la carga, solo mientras es visible, respeta movimiento reducido / ahorro de datos; PLAY si el navegador lo bloquea */
-(function(){
-  var box=document.getElementById('heroMedia'); if(!box) return;
-  var v=box.querySelector('.bio-vid'), btn=box.querySelector('.vid-toggle'); if(!v||!btn) return;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches, conn=navigator.connection||{};
-  if(reduce||conn.saveData===true){ btn.hidden=true; return; }
-  var userPaused=false, visible=false, ready=document.readyState==='complete';
-  function label(){ btn.textContent=v.paused?'PLAY':'PAUSE'; btn.setAttribute('aria-label',v.paused?'Play animation':'Pause animation'); }
-  function start(){ if(userPaused||!ready||!visible) return; var p=v.play(); if(p&&p.catch) p.catch(function(){ box.classList.add('blocked'); label(); }); }
-  if(!ready) window.addEventListener('load',function(){ ready=true; start(); });
-  v.addEventListener('playing',function(){ box.classList.remove('blocked'); box.classList.add('playing'); label(); });
-  v.addEventListener('pause',label);
-  v.addEventListener('error',function(){ btn.hidden=true; box.classList.remove('playing'); },true);
-  btn.addEventListener('click',function(){ if(v.paused){ userPaused=false; start(); } else { userPaused=true; v.pause(); } });
-  new IntersectionObserver(function(es){ es.forEach(function(e){ visible=e.isIntersecting; if(visible) start(); else v.pause(); }); },{threshold:.35}).observe(box);
+var SC=[{n:'01',t:'INSTINCT 01',u:'https://on.soundcloud.com/0ZlQyrgV3dCcovq0d8',img:'instinct-01.webp'},{n:'02',t:'INSTINCT 02',u:'https://on.soundcloud.com/o4t2wMgK7tY7YVFfi2',img:'instinct-02.webp'},{n:'03',t:'INSTINCT 03',u:'https://soundcloud.com/bordakdj/domina',img:'instinct-03.webp'}];
+var ses=document.getElementById('ses');
+SC.forEach(function(s){var a=document.createElement('article');
+ var p=s.u?'<iframe loading="lazy" title="'+s.t+' en SoundCloud" allow="autoplay" src="https://w.soundcloud.com/player/?url='+encodeURIComponent(s.u)+'&color=%23b08655&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe><a class="go" href="'+s.u+'" target="_blank" rel="noopener">Abrir SoundCloud ↗</a>':'<div class="pend">Enlace de SoundCloud por añadir</div>';
+ a.innerHTML='<img src="'+s.img+'" width="1200" height="1200" loading="lazy" alt="'+s.t+' — BØRDAK"><h3>'+s.t+'</h3>'+p;ses.appendChild(a)});
+var SEL='.hero .hcopy>*,.bio>*,.bio-copy>*,.sec>.lab,.sec>.h2,.sec>.sub,.g li,.inst-head,.ses article,.dates .row,.live>div,.flex,.gg,.note,.priv>div,.mail,.langs,.cta';
+var els=[];document.querySelectorAll(SEL).forEach(function(e){var a=e.parentElement&&e.parentElement.closest('.rv');if(!a){e.classList.add('rv');els.push(e)}});
+els.forEach(function(e){var sib=[].indexOf.call(e.parentElement.children,e);e.style.setProperty('--d',Math.min(sib,6)*0.08+'s')});
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)});
+ setTimeout(function(){els.forEach(function(e){if(e.getBoundingClientRect().bottom<0){e.classList.add('in');io.unobserve(e)}})},1800)}else{els.forEach(function(e){e.classList.add('in')})}
+var mb=document.getElementById('mb'),nav=document.getElementById('nav'),bar=document.querySelector('.bar');function bs(){bar.classList.toggle('solid',window.scrollY>30||nav.classList.contains('open'))}bs();window.addEventListener('scroll',bs,{passive:true});
+mb.onclick=function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);bs()};
+nav.addEventListener('click',function(e){if(e.target.tagName=='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');bs()}});
+var v=document.getElementById('orca');try{if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){v.removeAttribute('autoplay');v.pause()}}catch(e){}
 })();
 </script>
-</body>
-</html>
+<dialog id="dlg" aria-labelledby="dlgt"><form method="dialog"><div class="lab">Antes de descargar · Before you download</div><h3 id="dlgt">Mejor no imprimir.<br><span>Better not to print.</span></h3>
+<p>En este mundo digital, mejor no imprimir. Este dossier está pensado para leerse en pantalla: colabora con el medio ambiente en la medida de lo posible.</p>
+<p class="en">In a digital world, better not to print. This dossier is made to be read on screen.</p>
+<p class="pw">PDF protegido con contraseña · Password-protected PDF. <a href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20EPK%20password">bordakdj@gmail.com</a></p>
+<div class="cta"><a class="btn" id="dlgGo" href="#" download>Continuar · Continue</a><button class="btn o" value="x">Cancelar · Cancel</button></div></form></dialog>
+<script>
+(function(){var d=document.getElementById('dlg'),go=document.getElementById('dlgGo');if(!d||!d.showModal)return;
+document.querySelectorAll('a.dl').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go.href=a.getAttribute('href');go.setAttribute('download',a.getAttribute('download')||'');d.showModal()})});
+go.addEventListener('click',function(){setTimeout(function(){d.close()},300)});
+d.addEventListener('click',function(e){if(e.target===d)d.close()})})();
+</script>
+</body></html>

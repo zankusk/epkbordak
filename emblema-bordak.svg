@@ -1,0 +1,89 @@
+<svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+  <rect width="500" height="500" fill="#060608"/>
+
+  <!-- Outer ring -->
+  <circle cx="250" cy="250" r="220" stroke="#c8a96e" stroke-width="1" opacity="0.15"/>
+  <circle cx="250" cy="250" r="200" stroke="#c8a96e" stroke-width="1" opacity="0.08"/>
+
+  <!-- Main cross arms -->
+  <line x1="250" y1="50" x2="250" y2="450" stroke="#c8a96e" stroke-width="2.5"/>
+  <line x1="50" y1="250" x2="450" y2="250" stroke="#c8a96e" stroke-width="2.5"/>
+
+  <!-- Diagonal arms (lighter) -->
+  <line x1="109" y1="109" x2="391" y2="391" stroke="#c8a96e" stroke-width="1" opacity="0.3"/>
+  <line x1="391" y1="109" x2="109" y2="391" stroke="#c8a96e" stroke-width="1" opacity="0.3"/>
+
+  <!-- Top arrow head -->
+  <polyline points="250,50 272,92 250,86 228,92 250,50" stroke="#c8a96e" stroke-width="2" fill="none"/>
+  <!-- Bottom arrow head -->
+  <polyline points="250,450 272,408 250,414 228,408 250,450" stroke="#c8a96e" stroke-width="2" fill="none"/>
+  <!-- Left arrow head -->
+  <polyline points="50,250 92,228 86,250 92,272 50,250" stroke="#c8a96e" stroke-width="2" fill="none"/>
+  <!-- Right arrow head -->
+  <polyline points="450,250 408,228 414,250 408,272 450,250" stroke="#c8a96e" stroke-width="2" fill="none"/>
+
+  <!-- Ouroboros serpent (coiled circle around center) -->
+  <!-- Snake body as thick arc with scale texture suggestion -->
+  <circle cx="250" cy="250" r="90" stroke="#c8a96e" stroke-width="9" fill="none"
+    stroke-dasharray="490 80"
+    stroke-dashoffset="0"
+    stroke-linecap="round"/>
+
+  <!-- Snake scale marks along body -->
+  <g stroke="#060608" stroke-width="1.5" opacity="0.9">
+    <line x1="250" y1="160" x2="256" y2="164"/>
+    <line x1="268" y1="163" x2="272" y2="169"/>
+    <line x1="284" y1="172" x2="286" y2="179"/>
+    <line x1="297" y1="185" x2="297" y2="193"/>
+    <line x1="306" y1="200" x2="304" y2="208"/>
+    <line x1="311" y1="217" x2="308" y2="225"/>
+    <line x1="311" y1="234" x2="307" y2="241"/>
+    <line x1="307" y1="251" x2="302" y2="257"/>
+    <line x1="299" y1="267" x2="293" y2="271"/>
+    <line x1="287" y1="280" x2="281" y2="282"/>
+    <line x1="273" y1="288" x2="267" y2="288"/>
+    <line x1="258" y1="291" x2="252" y2="289"/>
+    <line x1="243" y1="289" x2="238" y2="286"/>
+    <line x1="229" y1="282" x2="225" y2="278"/>
+    <line x1="217" y1="271" x2="215" y2="265"/>
+    <line x1="208" y1="257" x2="208" y2="250"/>
+    <line x1="204" y1="241" x2="206" y2="234"/>
+    <line x1="204" y1="225" x2="208" y2="218"/>
+    <line x1="209" y1="208" x2="214" y2="202"/>
+    <line x1="219" y1="193" x2="225" y2="188"/>
+    <line x1="233" y1="179" x2="240" y2="176"/>
+  </g>
+
+  <!-- Snake head (open mouth facing tail) -->
+  <ellipse cx="250" cy="162" rx="10" ry="7" fill="#c8a96e" opacity="0.9"/>
+  <!-- Forked tongue -->
+  <line x1="250" y1="155" x2="245" y2="148" stroke="#c8a96e" stroke-width="1.5"/>
+  <line x1="250" y1="155" x2="255" y2="148" stroke="#c8a96e" stroke-width="1.5"/>
+  <!-- Snake eye -->
+  <circle cx="254" cy="160" r="2" fill="#060608"/>
+  <circle cx="255" cy="160" r="1" fill="#c8a96e" opacity="0.6"/>
+
+  <!-- Snake tail tip (meeting head) -->
+  <path d="M 232 168 Q 240 155 250 162" stroke="#c8a96e" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Center ring -->
+  <circle cx="250" cy="250" r="22" stroke="#c8a96e" stroke-width="2" fill="none"/>
+  <circle cx="250" cy="250" r="8" stroke="#c8a96e" stroke-width="1.5" fill="none"/>
+  <circle cx="250" cy="250" r="3" fill="#c8a96e"/>
+
+  <!-- Tick marks on outer ring -->
+  <g stroke="#c8a96e" stroke-width="2.5">
+    <line x1="250" y1="50" x2="250" y2="38"/>
+    <line x1="450" y1="250" x2="462" y2="250"/>
+    <line x1="250" y1="450" x2="250" y2="462"/>
+    <line x1="50" y1="250" x2="38" y2="250"/>
+  </g>
+
+  <!-- Corner tick marks (diagonal) -->
+  <g stroke="#c8a96e" stroke-width="1.5" opacity="0.5">
+    <line x1="109" y1="109" x2="101" y2="101"/>
+    <line x1="391" y1="109" x2="399" y2="101"/>
+    <line x1="391" y1="391" x2="399" y2="399"/>
+    <line x1="109" y1="391" x2="101" y2="399"/>
+  </g>
+</svg>
