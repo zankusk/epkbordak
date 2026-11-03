@@ -347,10 +347,10 @@ footer a{text-decoration:none}
 
 <script>
 (function(){
-var SC=[{n:'01',t:'INSTINCT 01',u:'https://on.soundcloud.com/0ZlQyrgV3dCcovq0d8',img:'instinct-01.webp'},{n:'02',t:'INSTINCT 02',u:'https://on.soundcloud.com/o4t2wMgK7tY7YVFfi2',img:'instinct-02.webp'},{n:'03',t:'INSTINCT 03',u:'https://soundcloud.com/bordakdj/domina',img:'instinct-03.webp'}];
+var SC=[{n:'01',t:'INSTINCT 01',u:'https://on.soundcloud.com/qfpZWiLM4h9GdGRqLS',img:'instinct-01.webp'},{n:'02',t:'INSTINCT 02',u:'https://on.soundcloud.com/3ERqn5XLk4XkNeeEJJ',img:'instinct-02.webp'},{n:'03',t:'INSTINCT 03',u:'https://soundcloud.com/bordakdj/domina',img:'instinct-03.webp'}];
 var ses=document.getElementById('ses');
 SC.forEach(function(s){var a=document.createElement('article');
- var p=s.u?'<iframe loading="lazy" title="'+s.t+' en SoundCloud" allow="autoplay" src="https://w.soundcloud.com/player/?url='+encodeURIComponent(s.u)+'&color=%23b08655&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe><a class="go" href="'+s.u+'" target="_blank" rel="noopener">Abrir SoundCloud ↗</a>':'<div class="pend">Enlace de SoundCloud por añadir</div>';
+ var short=/on\.soundcloud\.com/.test(s.u);var p=short?'<a class="btn big" style="margin-top:14px" href="'+s.u+'" target="_blank" rel="noopener">Escuchar en SoundCloud ↗</a>':s.u?'<iframe loading="lazy" title="'+s.t+' en SoundCloud" allow="autoplay" src="https://w.soundcloud.com/player/?url='+encodeURIComponent(s.u)+'&color=%23b08655&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe><a class="go" href="'+s.u+'" target="_blank" rel="noopener">Abrir SoundCloud ↗</a>':'<div class="pend">Enlace de SoundCloud por añadir</div>';
  a.innerHTML='<img src="'+s.img+'" width="1200" height="1200" loading="lazy" alt="'+s.t+' — BØRDAK"><h3>'+s.t+'</h3>'+p;ses.appendChild(a)});
 var SEL='.hero .hcopy>*,.bio>*,.bio-copy>*,.sec>.lab,.sec>.h2,.sec>.sub,.g li,.inst-head,.ses article,.dates .row,.live>div,.flex,.gg,.note,.priv>div,.mail,.langs,.cta';
 var els=[];document.querySelectorAll(SEL).forEach(function(e){var a=e.parentElement&&e.parentElement.closest('.rv');if(!a){e.classList.add('rv');els.push(e)}});
