@@ -130,6 +130,14 @@ a{color:inherit}
 .design-grid h3{font:400 clamp(34px,5vw,58px)/1 var(--display);text-transform:uppercase;margin:12px 0}
 .design-grid p{max-width:48ch;color:#4b463f;margin:0}
 .design-note{font:500 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:24px}
+
+.sec.design{position:relative;overflow:hidden;isolation:isolate;margin-inline:calc(50% - 50vw);padding:96px max(18px,calc(50vw - 620px));background:#050505;color:#eee8dc}
+.dvid{position:absolute;inset:0;z-index:-1;overflow:hidden;background:#050505}
+.dvid video{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;filter:blur(7px) brightness(1.15) contrast(1.05);opacity:1}
+.dvid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.72) 0%,rgba(5,5,5,.22) 40%,rgba(5,5,5,.4) 72%,rgba(5,5,5,.88) 100%)}
+.design .lab{color:#b9ae9a}.design .h2{color:#f1ece1}.design .sub,.design-grid p{color:#d6cfc1}
+.design-grid,.design-grid article{border-color:rgba(232,225,210,.22)!important}.design-grid article>span{color:#b18b5b}.design-grid h3{color:#f1ece1}
+.design-note{color:#a69e8f}.design .btn.o{color:#eee8dc;border-color:#eee8dc}.design .btn.o:hover{background:#eee8dc;color:#111}
 @media(min-width:800px){.design-grid{grid-template-columns:1fr 1fr;column-gap:44px}.design-grid article+article{padding-left:34px;border-left:1px solid var(--line)}}
 
 /* contacto */
@@ -247,6 +255,7 @@ footer a{text-decoration:none}
 </section>
 <div class="greek" aria-hidden="true"></div>
 <section class="sec design" id="design">
+ <div class="dvid" aria-hidden="true"><video id="dv" src="visuals-loop.mp4" poster="visuals-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
  <div class="lab">Dirección visual · Diseño para eventos</div><h2 class="h2">La música<br>también se ve.</h2>
  <p class="sub">Diseño flyers y desarrollo visuales temáticos para eventos que necesitan una identidad propia. Cada propuesta parte de un concepto y se adapta al carácter de la música, el espacio y el público.</p>
  <div class="design-grid">
@@ -360,6 +369,7 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 var mb=document.getElementById('mb'),nav=document.getElementById('nav'),bar=document.querySelector('.bar');function bs(){bar.classList.toggle('solid',window.scrollY>30||nav.classList.contains('open'))}bs();window.addEventListener('scroll',bs,{passive:true});
 mb.onclick=function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);bs()};
 nav.addEventListener('click',function(e){if(e.target.tagName=='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');bs()}});
+var dv=document.getElementById('dv');if(dv){var pd=function(){var r=dv.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)pd();else dv.pause()})},{threshold:.05}).observe(dv)}else pd();window.addEventListener('touchstart',function(){if(dv.paused&&dv.getBoundingClientRect().top<innerHeight)pd()},{passive:true})}
 var v=document.getElementById('orca');try{var pl=function(){var r=v.play();if(r&&r.catch)r.catch(function(){})};pl();v.addEventListener('loadeddata',pl);['touchstart','click','scroll'].forEach(function(e){window.addEventListener(e,function f(){if(v.paused)pl();else window.removeEventListener(e,f)},{passive:true})});document.addEventListener('visibilitychange',function(){if(!document.hidden&&v.paused)pl()})}catch(e){}
 })();
 </script>
