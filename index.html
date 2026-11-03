@@ -170,7 +170,7 @@ footer a{text-decoration:none}
 .closing footer span:nth-child(2){display:flex;gap:24px}
 .closing footer a{color:#e8e1d2;text-decoration:none}
 .closing footer a:hover{color:#b18b5b}
-@media(prefers-reduced-motion:reduce){.closing-mark{animation:none}}
+
 @media(max-width:600px){.closing{padding-top:56px}.closing footer{justify-content:center;text-align:center;flex-direction:column}.closing footer span:nth-child(2){justify-content:center}}
 
 
@@ -360,7 +360,7 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 var mb=document.getElementById('mb'),nav=document.getElementById('nav'),bar=document.querySelector('.bar');function bs(){bar.classList.toggle('solid',window.scrollY>30||nav.classList.contains('open'))}bs();window.addEventListener('scroll',bs,{passive:true});
 mb.onclick=function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);bs()};
 nav.addEventListener('click',function(e){if(e.target.tagName=='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');bs()}});
-var v=document.getElementById('orca');try{if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){v.removeAttribute('autoplay');v.pause()}}catch(e){}
+var v=document.getElementById('orca');try{var pl=function(){var r=v.play();if(r&&r.catch)r.catch(function(){})};pl();v.addEventListener('loadeddata',pl);['touchstart','click','scroll'].forEach(function(e){window.addEventListener(e,function f(){if(v.paused)pl();else window.removeEventListener(e,f)},{passive:true})});document.addEventListener('visibilitychange',function(){if(!document.hidden&&v.paused)pl()})}catch(e){}
 })();
 </script>
 <dialog id="dlg" aria-labelledby="dlgt"><form method="dialog"><div class="lab">Antes de descargar · Before you download</div><h3 id="dlgt">Mejor no imprimir.<br><span>Better not to print.</span></h3>
