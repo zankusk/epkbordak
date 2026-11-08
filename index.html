@@ -8,7 +8,7 @@
 <meta property="og:type" content="website"><meta property="og:site_name" content="BØRDAK"><meta property="og:title" content="BØRDAK — DJ techno hipnótico"><meta property="og:description" content="BØRDAK — DJ de techno hipnótico, crudo y percusivo."><meta property="og:url" content="https://zankusk.github.io/epkbordak/"><meta property="og:image" content="https://zankusk.github.io/epkbordak/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<style>@font-face{font-family:'Cormorant Garamond';src:url(cormorant.ttf) format('truetype');font-weight:300 700;font-style:normal;font-display:swap}@font-face{font-family:'Cormorant Garamond';src:url(cormorant-italic.ttf) format('truetype');font-weight:300 700;font-style:italic;font-display:swap}@font-face{font-family:'Anton';src:url(anton.ttf) format('truetype');font-display:swap}@font-face{font-family:'Archivo';src:url(archivo.ttf) format('truetype');font-weight:100 900;font-display:swap}
+<style>@font-face{font-family:'Cormorant Garamond';src:url(cormorant.woff) format('woff');font-weight:300 700;font-style:normal;font-display:swap}@font-face{font-family:'Cormorant Garamond';src:url(cormorant-italic.woff) format('woff');font-weight:300 700;font-style:italic;font-display:swap}@font-face{font-family:'Anton';src:url(anton.woff) format('woff');font-display:swap}@font-face{font-family:'Archivo';src:url(archivo.woff) format('woff');font-weight:100 900;font-display:swap}
 .sec#rider{margin-inline:calc(50% - 50vw);padding:84px max(18px,calc(50vw - 620px));background:#000}
 .sec#rider .gear .ph{background:#000}
 .gear.txt.acc{grid-column:1/-1;align-items:flex-start;justify-content:center;padding:28px;min-height:120px}
@@ -22,6 +22,12 @@
 .cvid video{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(16px) brightness(.8) saturate(.9)}
 .cvid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.5) 55%,rgba(19,18,17,.75) 88%,#131211 100%)}
 @media(prefers-reduced-motion:reduce){.cvid video{display:none}.cvid{background:#000 url(contact-poster.jpg) center/cover}}
+
+.sec.privv{position:relative;overflow:hidden;isolation:isolate;margin-inline:calc(50% - 50vw);padding:96px max(18px,calc(50vw - 620px))}
+.pvid{position:absolute;inset:0;z-index:-1;overflow:hidden;background:#000}
+.pvid video{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(14px) brightness(.85)}
+.pvid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#131211 0%,rgba(0,0,0,.6) 22%,rgba(0,0,0,.5) 55%,rgba(0,0,0,.6) 80%,#131211 100%)}
+@media(prefers-reduced-motion:reduce){.pvid video{display:none}.pvid{background:#000 url(priv-poster.jpg) center/cover}}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,500&display=swap">
 <style>
@@ -265,7 +271,8 @@ footer a{text-decoration:none}
 </section>
 
 <div class="greek" aria-hidden="true"></div>
-<section class="sec" id="privados">
+<section class="sec privv" id="privados">
+ <div class="pvid" aria-hidden="true"><video id="pv" src="priv-loop.mp4" poster="priv-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
  <div class="priv" style="grid-template-columns:1fr"><div><div class="lab">Eventos privados</div><h2 class="h2">Una noche<br>a tu medida</h2><p class="sub">Sets de techno para eventos privados y sesiones a medida. Cuéntame el contexto, el espacio y el tipo de experiencia que buscas.</p><div class="cta"><a class="btn" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Evento%20privado">Consultar disponibilidad</a></div></div>
  </div>
 </section>
@@ -388,6 +395,7 @@ var mb=document.getElementById('mb'),nav=document.getElementById('nav'),bar=docu
 mb.onclick=function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);bs()};
 nav.addEventListener('click',function(e){if(e.target.tagName=='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');bs()}});
 var cv=document.getElementById('cv');if(cv){var pc=function(){var r=cv.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)pc();else cv.pause()})},{threshold:.05}).observe(cv)}else pc();window.addEventListener('touchstart',function(){if(cv.paused&&cv.getBoundingClientRect().top<innerHeight)pc()},{passive:true})}
+var pv=document.getElementById('pv');if(pv){var pp=function(){var r=pv.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)pp();else pv.pause()})},{threshold:.05}).observe(pv)}else pp();window.addEventListener('touchstart',function(){if(pv.paused&&pv.getBoundingClientRect().top<innerHeight)pp()},{passive:true})}
 var dv=document.getElementById('dv');if(dv){var pd=function(){var r=dv.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)pd();else dv.pause()})},{threshold:.05}).observe(dv)}else pd();window.addEventListener('touchstart',function(){if(dv.paused&&dv.getBoundingClientRect().top<innerHeight)pd()},{passive:true})}
 var v=document.getElementById('orca');try{var pl=function(){var r=v.play();if(r&&r.catch)r.catch(function(){})};pl();v.addEventListener('loadeddata',pl);['touchstart','click','scroll'].forEach(function(e){window.addEventListener(e,function f(){if(v.paused)pl();else window.removeEventListener(e,f)},{passive:true})});document.addEventListener('visibilitychange',function(){if(!document.hidden&&v.paused)pl()})}catch(e){}
 })();
