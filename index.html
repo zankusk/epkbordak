@@ -65,6 +65,11 @@
 .cor-count{font:500 11px var(--sans);letter-spacing:.2em;color:var(--dim);min-width:64px;text-align:center}
 .cor-dots{display:flex;gap:8px}.cor-dots i{width:22px;height:2px;background:var(--line);transition:background .3s,width .3s}.cor-dots i.on{background:var(--bronze);width:36px}
 @media(prefers-reduced-motion:reduce){.cor-card{transition:none}.cor-cap>div{animation:none}}
+
+/* Sin botón de play nativo en ningún vídeo (iOS lo muestra con ahorro de batería) */
+video{pointer-events:none}
+video::-webkit-media-controls,video::-webkit-media-controls-start-playback-button,video::-webkit-media-controls-overlay-play-button,video::-webkit-media-controls-panel,video::-webkit-media-controls-play-button,video::-webkit-media-controls-enclosure{display:none!important;-webkit-appearance:none;opacity:0!important}
+video::-webkit-media-controls-start-playback-button{display:none!important}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,500&display=swap">
 <style>
@@ -257,7 +262,7 @@ footer a{text-decoration:none}
  <button class="mb" id="mb" type="button" aria-expanded="false" aria-controls="nav">Menú</button></header>
 <main class="w" id="top">
 <section class="hero">
- <div class="pair"><img src="hero-man.webp" width="1254" height="1254" fetchpriority="high" alt="BØRDAK, medio rostro en blanco y negro con el ojo ámbar"><video id="orca" src="orca-loop.mp4" poster="orca-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Ojo de una orca en movimiento lento"></video></div>
+ <div class="pair"><img src="hero-man.webp" width="1254" height="1254" fetchpriority="high" alt="BØRDAK, medio rostro en blanco y negro con el ojo ámbar"><video id="orca" disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate noremoteplayback" src="orca-loop.mp4" poster="orca-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Ojo de una orca en movimiento lento"></video></div>
  <div class="hcopy"><h1>BØRDAK</h1><p>Techno hipnótico, crudo y percusivo. Ritmos físicos, tensión progresiva y atmósferas profundas.</p><a class="btn big" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Booking%20Request">Solicitar booking</a></div>
 </section></main>
 <div class="greek" aria-hidden="true"></div>
@@ -309,13 +314,13 @@ footer a{text-decoration:none}
 
 <div class="greek" aria-hidden="true"></div>
 <section class="sec privv" id="privados">
- <div class="pvid" aria-hidden="true"><video id="pv" src="priv-loop.mp4" poster="priv-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+ <div class="pvid" aria-hidden="true"><video id="pv" disablepictureinpicture disableremoteplayback src="priv-loop.mp4" poster="priv-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
  <div class="priv" style="grid-template-columns:1fr"><div><div class="lab">Eventos privados</div><h2 class="h2">Una noche<br>a tu medida</h2><p class="sub">Sets de techno para eventos privados y sesiones a medida. Cuéntame el contexto, el espacio y el tipo de experiencia que buscas.</p><div class="cta"><a class="btn" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Evento%20privado">Consultar disponibilidad</a></div></div>
  </div>
 </section>
 <div class="greek" aria-hidden="true"></div>
 <section class="sec design" id="design">
- <div class="dvid" aria-hidden="true"><video id="dv" src="visuals-loop.mp4" poster="visuals-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+ <div class="dvid" aria-hidden="true"><video id="dv" disablepictureinpicture disableremoteplayback src="visuals-loop.mp4" poster="visuals-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
  <div class="lab">Dirección visual · Diseño para eventos</div><h2 class="h2">La música<br>también se ve.</h2>
  <p class="sub">Diseño flyers y desarrollo visuales temáticos para eventos que necesitan una identidad propia. Cada propuesta parte de un concepto y se adapta al carácter de la música, el espacio y el público.</p>
  <div class="design-grid">
@@ -327,7 +332,7 @@ footer a{text-decoration:none}
 </section>
 <div class="greek" aria-hidden="true"></div>
 <section class="sec contactv" id="contact">
- <div class="cvid" aria-hidden="true"><video id="cv" src="contact-loop.mp4" poster="contact-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+ <div class="cvid" aria-hidden="true"><video id="cv" disablepictureinpicture disableremoteplayback src="contact-loop.mp4" poster="contact-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
  <div class="lab">Contratación / Contacto</div><h2 class="h2">Hablemos de<br>tu evento</h2>
  <a class="mail" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Booking%20Request">bordakdj@gmail.com</a>
  <p class="langs">Puedes escribirme en español o en inglés.<br><em>You can write to me in Spanish or English.</em></p>
