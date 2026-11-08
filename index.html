@@ -8,7 +8,21 @@
 <meta property="og:type" content="website"><meta property="og:site_name" content="BØRDAK"><meta property="og:title" content="BØRDAK — DJ techno hipnótico"><meta property="og:description" content="BØRDAK — DJ de techno hipnótico, crudo y percusivo."><meta property="og:url" content="https://zankusk.github.io/epkbordak/"><meta property="og:image" content="https://zankusk.github.io/epkbordak/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<style>@font-face{font-family:'Cormorant Garamond';src:url(cormorant.ttf) format('truetype');font-weight:300 700;font-style:normal;font-display:swap}@font-face{font-family:'Cormorant Garamond';src:url(cormorant-italic.ttf) format('truetype');font-weight:300 700;font-style:italic;font-display:swap}@font-face{font-family:'Anton';src:url(anton.ttf) format('truetype');font-display:swap}@font-face{font-family:'Archivo';src:url(archivo.ttf) format('truetype');font-weight:100 900;font-display:swap}</style>
+<style>@font-face{font-family:'Cormorant Garamond';src:url(cormorant.ttf) format('truetype');font-weight:300 700;font-style:normal;font-display:swap}@font-face{font-family:'Cormorant Garamond';src:url(cormorant-italic.ttf) format('truetype');font-weight:300 700;font-style:italic;font-display:swap}@font-face{font-family:'Anton';src:url(anton.ttf) format('truetype');font-display:swap}@font-face{font-family:'Archivo';src:url(archivo.ttf) format('truetype');font-weight:100 900;font-display:swap}
+.sec#rider{margin-inline:calc(50% - 50vw);padding:84px max(18px,calc(50vw - 620px));background:#000}
+.sec#rider .gear .ph{background:#000}
+.gear.txt.acc{grid-column:1/-1;align-items:flex-start;justify-content:center;padding:28px;min-height:120px}
+.gear.txt.acc h3{font-size:clamp(28px,4vw,52px);line-height:1;margin:0 0 10px}.gear.txt.acc p{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+@media(min-width:800px){.gear.txt.acc{padding:48px}}
+@media(min-width:800px){.gear.txt.acc{grid-column:span 3}}
+#bio{padding-bottom:110px}
+
+.sec.contactv{position:relative;overflow:hidden;isolation:isolate;margin-inline:calc(50% - 50vw);padding:96px max(18px,calc(50vw - 620px))}
+.cvid{position:absolute;inset:0;z-index:-1;overflow:hidden;background:#000}
+.cvid video{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(16px) brightness(.8) saturate(.9)}
+.cvid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.5) 55%,rgba(19,18,17,.75) 88%,#131211 100%)}
+@media(prefers-reduced-motion:reduce){.cvid video{display:none}.cvid{background:#000 url(contact-poster.jpg) center/cover}}
+</style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,500&display=swap">
 <style>
 /* Layout: marfil editorial, díptico en el hero, titulares Anton, bloque oscuro suave para INSTINCT y Groove, meandro griego como hilo */
@@ -213,7 +227,7 @@ footer a{text-decoration:none}
  </div>
 </section>
 <div class="greek" aria-hidden="true"></div>
-<section class="sec" id="generos" style="padding-top:0">
+<section class="sec" id="generos">
  <div class="lab">Estilos · Genres</div><h2 class="h2">Four ways<br>down</h2>
  <ol class="g">
   <li><span class="n">I</span><div class="tx"><span class="t">Raw</span><p>Textura cruda, carácter industrial y energía sin pulir.</p></div><div class="p"><img src="g-raw.webp" width="546" height="599" loading="lazy" decoding="async" alt="BØRDAK, medio rostro en blanco y negro con antifaz de cuero, la oreja a la vista" style="object-position:0% 15%"></div></li>
@@ -243,9 +257,10 @@ footer a{text-decoration:none}
   <figure class="gear"><div class="ph"><img src="rider-cdj-3000.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Pioneer DJ CDJ-3000"></div><figcaption><h3>CDJ-3000</h3><p>Pioneer DJ</p></figcaption></figure>
   <figure class="gear"><div class="ph"><img src="rider-cdj-2000nxs2.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Pioneer DJ CDJ-2000NXS2"></div><figcaption><h3>CDJ-2000NXS2</h3><p>Pioneer DJ</p></figcaption></figure>
   <figure class="gear"><div class="ph"><img src="rider-djm-900nxs2.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Pioneer DJ DJM-900NXS2"></div><figcaption><h3>DJM-900NXS2</h3><p>Pioneer DJ</p></figcaption></figure>
-  <figure class="gear txt"><figcaption><h3>DJM-V10</h3><p>Pioneer DJ</p></figcaption></figure>
+  
   <figure class="gear"><div class="ph"><img src="rider-xone-92.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Allen &amp; Heath Xone:92"></div><figcaption><h3>Xone:92</h3><p>Allen &amp; Heath</p></figcaption></figure>
-  <figure class="gear"><div class="ph"><img src="rider-xone-96.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Allen &amp; Heath Xone:96"></div><figcaption><h3>Xone:96</h3><p>Allen &amp; Heath</p></figcaption></figure></div></div>
+  <figure class="gear"><div class="ph"><img src="rider-xone-96.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Allen &amp; Heath Xone:96"></div><figcaption><h3>Xone:96</h3><p>Allen &amp; Heath</p></figcaption></figure><figure class="gear txt acc"><figcaption><h3>Setup superior<br>o inferior</h3><p>Aceptados</p></figcaption></figure>
+</div></div>
  <p class="note">¿Tu sala tiene otra configuración? <b>Escríbeme antes del evento</b> y confirmamos juntos el equipo disponible.</p>
 </section>
 
@@ -267,7 +282,8 @@ footer a{text-decoration:none}
  <div class="cta"><a class="btn o" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Dise%C3%B1o%20visual">Consultar proyecto de diseño</a></div>
 </section>
 <div class="greek" aria-hidden="true"></div>
-<section class="sec" id="contact">
+<section class="sec contactv" id="contact">
+ <div class="cvid" aria-hidden="true"><video id="cv" src="contact-loop.mp4" poster="contact-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
  <div class="lab">Contratación / Contacto</div><h2 class="h2">Hablemos de<br>tu evento</h2>
  <a class="mail" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Booking%20Request">bordakdj@gmail.com</a>
  <p class="langs">Puedes escribirme en español o en inglés.<br><em>You can write to me in Spanish or English.</em></p>
@@ -371,6 +387,7 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 var mb=document.getElementById('mb'),nav=document.getElementById('nav'),bar=document.querySelector('.bar');function bs(){bar.classList.toggle('solid',window.scrollY>30||nav.classList.contains('open'))}bs();window.addEventListener('scroll',bs,{passive:true});
 mb.onclick=function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);bs()};
 nav.addEventListener('click',function(e){if(e.target.tagName=='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');bs()}});
+var cv=document.getElementById('cv');if(cv){var pc=function(){var r=cv.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)pc();else cv.pause()})},{threshold:.05}).observe(cv)}else pc();window.addEventListener('touchstart',function(){if(cv.paused&&cv.getBoundingClientRect().top<innerHeight)pc()},{passive:true})}
 var dv=document.getElementById('dv');if(dv){var pd=function(){var r=dv.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)pd();else dv.pause()})},{threshold:.05}).observe(dv)}else pd();window.addEventListener('touchstart',function(){if(dv.paused&&dv.getBoundingClientRect().top<innerHeight)pd()},{passive:true})}
 var v=document.getElementById('orca');try{var pl=function(){var r=v.play();if(r&&r.catch)r.catch(function(){})};pl();v.addEventListener('loadeddata',pl);['touchstart','click','scroll'].forEach(function(e){window.addEventListener(e,function f(){if(v.paused)pl();else window.removeEventListener(e,f)},{passive:true})});document.addEventListener('visibilitychange',function(){if(!document.hidden&&v.paused)pl()})}catch(e){}
 })();
