@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="apple-touch-icon" href="icon-180.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="BØRDAK"><meta property="og:title" content="BØRDAK — DJ techno hipnótico"><meta property="og:description" content="BØRDAK — DJ de techno hipnótico, crudo y percusivo."><meta property="og:url" content="https://zankusk.github.io/epkbordak/"><meta property="og:image" content="https://zankusk.github.io/epkbordak/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="cormorant.woff" as="font" type="font/woff" crossorigin><meta property="og:locale" content="es_ES">
 <style>@font-face{font-family:'Cormorant Garamond';src:url(cormorant.woff) format('woff');font-weight:300 700;font-style:normal;font-display:swap}@font-face{font-family:'Cormorant Garamond';src:url(cormorant-italic.woff) format('woff');font-weight:300 700;font-style:italic;font-display:swap}@font-face{font-family:'Anton';src:url(anton.woff) format('woff');font-display:swap}@font-face{font-family:'Archivo';src:url(archivo.woff) format('woff');font-weight:100 900;font-display:swap}
 .sec#rider{margin-inline:calc(50% - 50vw);padding:84px max(18px,calc(50vw - 620px));background:#000}
 .sec#rider .gear .ph{background:#000}
@@ -71,7 +71,6 @@ video{pointer-events:none}
 video::-webkit-media-controls,video::-webkit-media-controls-start-playback-button,video::-webkit-media-controls-overlay-play-button,video::-webkit-media-controls-panel,video::-webkit-media-controls-play-button,video::-webkit-media-controls-enclosure{display:none!important;-webkit-appearance:none;opacity:0!important}
 video::-webkit-media-controls-start-playback-button{display:none!important}
 </style>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,500&display=swap">
 <style>
 /* Layout: marfil editorial, díptico en el hero, titulares Anton, bloque oscuro suave para INSTINCT y Groove, meandro griego como hilo */
 :root{--bg:#131211;--ink:#e6e0d3;--dim:#9b9486;--soft:#bdb6a8;--soft2:#a9a295;--bronze:#b18b5b;--line:rgba(255,255,255,.3);--block:#1b1a18;--bone:#e8e1d2;
@@ -188,10 +187,10 @@ a{color:inherit}
 /* Diseño visual como servicio complementario, separado del booking DJ */
 .design-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:36px;border-top:1px solid var(--line)}
 .design-grid article{padding:24px 0;border-bottom:1px solid var(--line)}
-.design-grid article>span{font:500 10px var(--sans);letter-spacing:.2em;color:var(--bronze)}
+.design-grid article>span{font:500 11px var(--sans);letter-spacing:.2em;color:var(--bronze)}
 .design-grid h3{font:400 clamp(34px,5vw,58px)/1 var(--display);text-transform:uppercase;margin:12px 0}
 .design-grid p{max-width:48ch;color:var(--soft2);margin:0}
-.design-note{font:500 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:24px}
+.design-note{font:500 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:24px}
 
 .sec.design{position:relative;overflow:hidden;isolation:isolate;margin-inline:calc(50% - 50vw);padding:96px max(18px,calc(50vw - 620px));background:var(--bg);color:#eee8dc}
 .dvid{position:absolute;inset:0;z-index:-1;overflow:hidden;background:var(--bg)}
@@ -236,8 +235,8 @@ footer a{text-decoration:none}
 .closing-mark{display:block;width:clamp(110px,15vw,160px);margin-top:-8px;height:auto;animation:sealTurn 40s linear infinite;will-change:transform}
 @keyframes sealTurn{to{transform:rotate(360deg)}}
 .closing-word{font:300 clamp(34px,7vw,64px)/1 var(--serif);letter-spacing:.34em;padding-left:.34em;margin-top:22px}
-.closing-motto{font:500 9px var(--sans);letter-spacing:.25em;color:#9e927f;margin-top:14px}
-.closing footer{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(232,225,210,.2);margin-top:64px;padding-top:20px;color:#9e978c;font:500 9px var(--sans);letter-spacing:.15em}
+.closing-motto{font:500 11px var(--sans);letter-spacing:.25em;color:#a89c89;margin-top:14px}
+.closing footer{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(232,225,210,.2);margin-top:64px;padding-top:20px;color:#a8a195;font:500 11px var(--sans);letter-spacing:.15em}
 .closing footer span:nth-child(2){display:flex;gap:24px}
 .closing footer a{color:#e8e1d2;text-decoration:none}
 .closing footer a:hover{color:#b18b5b}
@@ -254,19 +253,20 @@ footer a{text-decoration:none}
 #dlg .cta{margin-top:20px}#dlg button.btn{cursor:pointer;font-family:var(--sans)}
 .epkrow{margin-top:14px}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"BØRDAK","genre":["Techno","Hypnotic techno"],"description":"DJ de techno hipnótico, crudo y percusivo. Tarraco / Barcelona.","url":"https://zankusk.github.io/epkbordak/","image":"https://zankusk.github.io/epkbordak/og.jpg","sameAs":["https://instagram.com/bordak.ov","https://soundcloud.com/bordakdj","https://linktr.ee/bordakdj"]}</script>
 </head><body>
 <script>document.documentElement.classList.add("js")</script>
 
 <header class="bar"><a class="mk" href="#top" aria-label="BØRDAK, inicio">BØRDAK</a>
  <nav id="nav" aria-label="Navegación principal"><a href="#bio">Bio</a><a href="#generos">Sonido</a><a href="#music">Sesiones</a><a href="#live">En directo</a><a href="#rider">Rider</a><a href="#design">Diseño</a><a href="#contact">Contacto</a><a class="epk dl" href="bordak-epk-es.pdf" download="BORDAK_EPK_ES.pdf">EPK ↓</a></nav>
  <button class="mb" id="mb" type="button" aria-expanded="false" aria-controls="nav">Menú</button></header>
-<main class="w" id="top">
+<main id="top"><div class="w">
 <section class="hero">
  <div class="pair"><img src="hero-man.webp" width="1254" height="1254" fetchpriority="high" alt="BØRDAK, medio rostro en blanco y negro con el ojo ámbar"><video id="orca" disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate noremoteplayback" src="orca-loop.mp4" poster="orca-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Ojo de una orca en movimiento lento"></video></div>
  <div class="hcopy"><h1>BØRDAK</h1><p>Techno hipnótico, crudo y percusivo. Ritmos físicos, tensión progresiva y atmósferas profundas.</p><a class="btn big" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Booking%20Request">Solicitar booking</a></div>
-</section></main>
+</section></div>
 <div class="greek" aria-hidden="true"></div>
-<main class="w">
+<div class="w">
 <section class="sec bio" id="bio">
  <div><div class="lab">DJ · Tarraco / Barcelona</div><h2 class="big" style="margin-top:14px">Físico.<br>Hipnótico.<br><span>Percusivo.</span></h2></div>
  <div class="bio-copy">
@@ -284,15 +284,15 @@ footer a{text-decoration:none}
   <li><span class="n">IV</span><div class="tx"><span class="t">Percussive</span><p>Ritmos secos, percusión tribal y groove físico.</p></div><div class="p"><img src="g-percusivo.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="Cría de elefante entre las patas de dos adultos" style="object-position:50% 48%"></div></li>
  </ol>
 </section>
-</main>
+</div>
 <div class="greek" aria-hidden="true"></div>
-<main class="w"><section class="sec" id="music">
+<div class="w"><section class="sec" id="music">
  <div><div class="inst-head"><div><div class="lab">Sesiones · SoundCloud</div><h2 class="h2">Instinct</h2></div><p>Una selección de sesiones que muestra distintas caras de su sonido.</p></div>
- <div class="ses" id="ses"></div></div>
-</section></main>
+ <div class="ses" id="ses"></div><noscript><a class="btn" href="https://soundcloud.com/bordakdj" target="_blank" rel="noopener">Escuchar en SoundCloud ↗</a></noscript></div>
+</section></div>
 <div class="greek" aria-hidden="true"></div>
 
-<main class="w">
+<div class="w">
 <section class="sec" id="live">
  <div class="live"><div><div class="lab">Experiencia en directo · 2026</div><h2 class="h2">Localito<br>3.0</h2><p class="lab" style="margin-top:14px">Castelldefels · Dos actuaciones realizadas · <a href="https://instagram.com/localito3.0" target="_blank" rel="noopener" style="color:var(--bronze)">@localito3.0 ↗</a></p></div>
  <div class="dates"><div class="row"><b>12 · 02 · 2026</b><span>22:30 — 02:30 · Sesión de 2 horas · Talento local</span></div><div class="row"><b>11 · 06 · 2026</b><span>23:00 — 03:00 · Sesión de 2 horas · Talento local</span></div></div></div>
@@ -335,11 +335,12 @@ footer a{text-decoration:none}
  <div class="cvid" aria-hidden="true"><video id="cv" disablepictureinpicture disableremoteplayback src="contact-loop.mp4" poster="contact-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
  <div class="lab">Contratación / Contacto</div><h2 class="h2">Hablemos de<br>tu evento</h2>
  <a class="mail" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Booking%20Request">bordakdj@gmail.com</a>
- <p class="langs">Puedes escribirme en español o en inglés.<br><em>You can write to me in Spanish or English.</em></p>
+ <p class="langs">Puedes escribirme en español o en inglés.<br><em lang="en">You can write to me in Spanish or English.</em></p>
  <div class="cta"><a class="btn" href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20Booking%20Request">Solicitar booking</a><a class="btn o" href="https://linktr.ee/bordakdj" target="_blank" rel="noopener">Linktree ↗</a><a class="btn o" href="https://instagram.com/bordak.ov" target="_blank" rel="noopener">Instagram ↗</a></div>
  <div class="cta epkrow"><a class="btn dl" href="bordak-epk-es.pdf" download="BORDAK_EPK_ES.pdf">Descargar EPK ↓</a><a class="btn dl" href="bordak-epk-en.pdf" download="BORDAK_EPK_EN.pdf" lang="en">Download EPK (English) ↓</a></div>
  <p class="lab" style="margin-top:18px;line-height:1.9">Dossier profesional en PDF (ES / EN) · Protegido con contraseña: <a href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20EPK%20password" style="color:var(--bronze)">solicítala por email</a>.</p>
 </section>
+</div>
 </main>
 <section class="closing" aria-label="Cierre BØRDAK">
  <div class="closing-inner">
@@ -483,15 +484,15 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 var mb=document.getElementById('mb'),nav=document.getElementById('nav'),bar=document.querySelector('.bar');function bs(){bar.classList.toggle('solid',window.scrollY>30||nav.classList.contains('open'))}bs();window.addEventListener('scroll',bs,{passive:true});
 mb.onclick=function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);bs()};
 nav.addEventListener('click',function(e){if(e.target.tagName=='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');bs()}});
-var cv=document.getElementById('cv');if(cv){var pc=function(){var r=cv.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)pc();else cv.pause()})},{threshold:.05}).observe(cv)}else pc();window.addEventListener('touchstart',function(){if(cv.paused&&cv.getBoundingClientRect().top<innerHeight)pc()},{passive:true})}
-var pv=document.getElementById('pv');if(pv){var pp=function(){var r=pv.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)pp();else pv.pause()})},{threshold:.05}).observe(pv)}else pp();window.addEventListener('touchstart',function(){if(pv.paused&&pv.getBoundingClientRect().top<innerHeight)pp()},{passive:true})}
-var dv=document.getElementById('dv');if(dv){var pd=function(){var r=dv.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)pd();else dv.pause()})},{threshold:.05}).observe(dv)}else pd();window.addEventListener('touchstart',function(){if(dv.paused&&dv.getBoundingClientRect().top<innerHeight)pd()},{passive:true})}
+/* Vídeos de fondo: se reproducen solo cuando están en pantalla */
+function loopWhenVisible(id){var el=document.getElementById(id);if(!el)return;var play=function(){var r=el.play();if(r&&r.catch)r.catch(function(){})};if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)play();else el.pause()})},{threshold:.05}).observe(el)}else play();window.addEventListener('touchstart',function(){if(el.paused&&el.getBoundingClientRect().top<innerHeight)play()},{passive:true})}
+['cv','pv','dv'].forEach(loopWhenVisible);
 var v=document.getElementById('orca');try{var pl=function(){var r=v.play();if(r&&r.catch)r.catch(function(){})};pl();v.addEventListener('loadeddata',pl);['touchstart','click','scroll'].forEach(function(e){window.addEventListener(e,function f(){if(v.paused)pl();else window.removeEventListener(e,f)},{passive:true})});document.addEventListener('visibilitychange',function(){if(!document.hidden&&v.paused)pl()})}catch(e){}
 })();
 </script>
-<dialog id="dlg" aria-labelledby="dlgt"><form method="dialog"><div class="lab">Antes de descargar · Before you download</div><h3 id="dlgt">Mejor no imprimir.<br><span>Better not to print.</span></h3>
+<dialog id="dlg" aria-labelledby="dlgt"><form method="dialog"><div class="lab">Antes de descargar · Before you download</div><h3 id="dlgt">Mejor no imprimir.<br><span lang="en">Better not to print.</span></h3>
 <p>En este mundo digital, mejor no imprimir. Este dossier está pensado para leerse en pantalla: colabora con el medio ambiente en la medida de lo posible.</p>
-<p class="en">In a digital world, better not to print. This dossier is made to be read on screen.</p>
+<p class="en" lang="en">In a digital world, better not to print. This dossier is made to be read on screen.</p>
 <p class="pw">PDF protegido con contraseña · Password-protected PDF. <a href="mailto:bordakdj@gmail.com?subject=B%C3%98RDAK%20%E2%80%94%20EPK%20password">bordakdj@gmail.com</a></p>
 <div class="cta"><a class="btn" id="dlgGo" href="#" download>Continuar · Continue</a><button class="btn o" value="x">Cancelar · Cancel</button></div></form></dialog>
 <script>
